@@ -1,0 +1,16 @@
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\ServiceAPI.deps.json
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\ServiceAPI.runtimeconfig.json
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\ServiceAPI.runtimeconfig.dev.json
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\ServiceAPI.dll
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\obj\Debug\netcoreapp2.0\ServiceAPI.csprojAssemblyReference.cache
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\obj\Debug\netcoreapp2.0\ServiceAPI.csproj.CoreCompileInputs.cache
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\obj\Debug\netcoreapp2.0\ServiceAPI.AssemblyInfoInputs.cache
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\obj\Debug\netcoreapp2.0\ServiceAPI.AssemblyInfo.cs
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\ServiceAPI.pdb
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\obj\Debug\netcoreapp2.0\ServiceAPI.dll
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\obj\Debug\netcoreapp2.0\ServiceAPI.pdb
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\TermProjectClasses.dll
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\Utilities.dll
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\TermProjectClasses.pdb
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\Utilities.pdb
+C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\ServiceAPI\obj\Debug\netcoreapp2.0\ServiceAPI.csproj.CopyComplete
