@@ -41,7 +41,7 @@ namespace ServiceAPI.Controllers
 
         // GET: api/service/5
         [HttpGet("GetProducts")]
-        public DataSet Get(int DeptID)
+        public DataSet GetProducts(int DeptID)
         {
             DataSet ds = new DataSet();
 
