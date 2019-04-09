@@ -14,7 +14,7 @@ namespace desciption
 {
     public partial class TestingWebAPI : System.Web.UI.Page
     {
-        string baseURI = "http://localhost:3423/api/service/Merchant";
+        string baseURI = "http://cis-iis2.temple.edu/Spring2019/CIS3342_tug18800/TermProjectWS/api/service/Merchant";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -32,14 +32,9 @@ namespace desciption
             //string json = client.DownloadString(apiUrl);
 
             string json = WebCom.GetJson(baseURI + "/GetDepartments");
-            Dictionary<int, string> dep = new JavaScriptSerializer().Deserialize<Dictionary<int, string>>(json);
+            var dep = new JavaScriptSerializer().Deserialize<List<string>>(json);
 
             ddlDepartments.DataSource = dep;
-            //Assign Department Number
-            ddlDepartments.DataValueField = dep.Keys.ToString();
-            //Assign Department Name
-            ddlDepartments.DataTextField = dep.Values.ToString();
-
             ddlDepartments.DataBind();
 
             ddlDepartments.Items.Insert(0, new ListItem("-- Select --", ""));
@@ -49,7 +44,7 @@ namespace desciption
         {
             if (ddlDepartments.SelectedValue != "")
             {
-                int id = Convert.ToInt32(ddlDepartments.SelectedValue);
+                int id = ddlDepartments.SelectedIndex+1;
 
                 //string apiUrl = baseURI + "/GetProducts?DeptID=" + id;
                 //WebClient client = new WebClient();
@@ -57,7 +52,7 @@ namespace desciption
                 //client.Encoding = Encoding.UTF8;
                 //string json = client.DownloadString(apiUrl);
 
-                string json = WebCom.GetJson(baseURI + "/GetProducts");
+                string json = WebCom.GetJson(baseURI + "/GetProducts?DeptID=" + id.ToString());
                 DataSet ds = (DataSet)JsonConvert.DeserializeObject(json, (typeof(DataSet)));
 
                 gvProducts.DataSource = ds.Tables[0];

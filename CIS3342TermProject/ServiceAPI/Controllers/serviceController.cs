@@ -18,14 +18,14 @@ namespace ServiceAPI.Controllers
     {
         // GET: api/service
         [HttpGet("GetDepartments")]
-        public Dictionary<int, string> GetDepartments()
+        public List<string> GetDepartments()
         {
             SqlCommand comm = new SqlCommand();
             comm.CommandText = "TP_GetDepartments";
             comm.CommandType = CommandType.StoredProcedure;
 
             DataSet ds;
-            Dictionary<int, string> dep = new Dictionary<int, string> (); ;
+            List<string> dep = new List<string> (); ;
 
             try
             {
@@ -36,7 +36,7 @@ namespace ServiceAPI.Controllers
 
                 for(int i = 0; i < rows.Count; i++)
                 {
-                    dep.Add((int)rows[i]["DepartmentID"], (string)rows[i]["DepartmentName"]);
+                    dep.Add((string)rows[i]["DepartmentName"]);
                 }
             }
             catch(Exception ex)
@@ -79,7 +79,7 @@ namespace ServiceAPI.Controllers
             }
             catch (Exception ex)
             {
-                ds = null;
+                list = null;
             }
 
             return list;
