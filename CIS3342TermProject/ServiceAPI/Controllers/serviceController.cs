@@ -18,44 +18,110 @@ namespace ServiceAPI.Controllers
     {
         // GET: api/service
         [HttpGet("GetDepartments")]
-        public DataSet GetDepartments()
+        public Dictionary<int, string> GetDepartments()
         {
             SqlCommand comm = new SqlCommand();
             comm.CommandText = "TP_GetDepartments";
             comm.CommandType = CommandType.StoredProcedure;
 
             DataSet ds;
+            Dictionary<int, string> dep = new Dictionary<int, string> (); ;
 
             try
             {
                 DBConnect db = new DBConnect();
                 ds = db.GetDataSetUsingCmdObj(comm);
+
+                DataRowCollection rows = ds.Tables[0].Rows;
+
+                for(int i = 0; i < rows.Count; i++)
+                {
+                    dep.Add((int)rows[i]["DepartmentID"], (string)rows[i]["DepartmentName"]);
+                }
             }
             catch(Exception ex)
             {
-                ds = null;
+                dep = null;
             }
 
-            return ds;
+            return dep;
         }
 
         // GET: api/service/5
         [HttpGet("GetProducts")]
-        public DataSet GetProducts(int DeptID)
+        public List<Product> GetProducts(int DeptID)
         {
-            DataSet ds = new DataSet();
+            SqlCommand comm = new SqlCommand();
+            comm.CommandText = "TP_GetProductCatalog";
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.Parameters.AddWithValue("@DepartmentID", DeptID);
+            DataSet ds;
+            List<Product> list = new List<Product>();
 
-            return ds;
+            try
+            {
+                DBConnect db = new DBConnect();
+                ds = db.GetDataSetUsingCmdObj(comm);
+
+                DataRowCollection rows = ds.Tables[0].Rows;
+
+                for(int i =0; i < rows.Count; i++)
+                {
+                    Product p = new Product();
+
+                    p.ProductID = (int)rows[i]["ProductID"];
+                    p.Desc = (string)rows[i]["Desc"];
+                    p.Price = (double)rows[i]["Price"];
+                    p.Url = (string)rows[i]["ProductURL"];
+
+                    list.Add(p);
+                }
+            }
+            catch (Exception ex)
+            {
+                ds = null;
+            }
+
+            return list;
         }
         
         // POST: api/service
         [HttpPost("RegisterSite")]
-        public bool RegisterSite([FromBody]string SiteID, string Description, string APIKey,
-                         string Email, Merchant merchant )
+        public bool RegisterSite(string SiteID, string Description, string APIKey,
+                         string Email, Merchant merchant)
         {
+            SqlCommand comm = new SqlCommand();
+            comm.CommandText = "TP_RegisterSite";
+            comm.CommandType = CommandType.StoredProcedure;
+;
+            comm.Parameters.AddWithValue("@SiteID", SiteID);
+            comm.Parameters.AddWithValue("@APIKey", APIKey);
+            comm.Parameters.AddWithValue("@Desc", Description);
+            comm.Parameters.AddWithValue("@Email", Email);
+            comm.Parameters.AddWithValue("@Phone", merchant.Phone);
+            comm.Parameters.AddWithValue("@Address", merchant.Address);
+            comm.Parameters.AddWithValue("@City", merchant.City);
+            comm.Parameters.AddWithValue("@State", merchant.State);
+            comm.Parameters.AddWithValue("@ZIP", merchant.ZIP);
+
+            try
+            {
+                DBConnect db = new DBConnect();
+                int rowsAffected = db.DoUpdateUsingCmdObj(comm);
+
+                if (rowsAffected > 0)
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
             return false;
         }
-        
+
         // PUT: api/service/5
         [HttpPost("RecordPurchase")]
         public bool RecordPurchase(string ProductID, int Quantity, string SiteID, 

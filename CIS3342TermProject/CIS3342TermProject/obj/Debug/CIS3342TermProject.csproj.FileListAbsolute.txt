@@ -33,3 +33,38 @@ C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\CIS3342TermProject\obj
 C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\CIS3342TermProject\obj\Debug\CIS3342TermProject.csproj.CopyComplete
 C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\CIS3342TermProject\obj\Debug\CIS3342TermProject.dll
 C:\Users\tug18800\Desktop\Term Project\CIS3342TermProject\CIS3342TermProject\obj\Debug\CIS3342TermProject.pdb
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\ApplicationInsights.config
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\csc.exe
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\vbc.exe
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\VBCSCompiler.exe
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\CIS3342TermProject.dll.config
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\CIS3342TermProject.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\CIS3342TermProject.pdb
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.Web.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.Web.xml
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\obj\Debug\CIS3342TermProject.csprojAssemblyReference.cache
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\obj\Debug\CIS3342TermProject.csproj.CoreCompileInputs.cache
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\obj\Debug\CIS3342TermProject.csproj.CopyComplete
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\obj\Debug\CIS3342TermProject.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\obj\Debug\CIS3342TermProject.pdb

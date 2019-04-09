@@ -7,8 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 
-namespace Utilities
-{
     public static class WebCom
     {
         public static string GetJson(string Url)
@@ -78,4 +76,3 @@ namespace Utilities
             }
         }
     }
-}
