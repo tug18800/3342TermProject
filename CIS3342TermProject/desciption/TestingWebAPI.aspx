@@ -35,8 +35,8 @@
                     <asp:GridView ID="gvProducts" runat="server" CssClass="table table-bordered table-hover" AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField DataField="Desc" HeaderText="Description" />
-                            <asp:BoundField DataField="Price" HeaderText="Price" />
-                            <asp:ImageField DataImageUrlField="ProductURL" HeaderText="Image" ControlStyle-Width="100">
+                            <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C}"/>
+                            <asp:ImageField DataImageUrlField="Url" HeaderText="Image" ControlStyle-Width="100">
                             </asp:ImageField>
                         </Columns>
 

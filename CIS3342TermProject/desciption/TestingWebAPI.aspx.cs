@@ -7,8 +7,8 @@ using System.Web.UI.WebControls;
 using System.Net;
 using System.Data;
 using Newtonsoft.Json;
-using Utilities;
 using System.Web.Script.Serialization;
+using TermProjectClasses;
 
 namespace desciption
 {
@@ -44,7 +44,7 @@ namespace desciption
         {
             if (ddlDepartments.SelectedValue != "")
             {
-                int id = ddlDepartments.SelectedIndex+1;
+                int id = ddlDepartments.SelectedIndex;
 
                 //string apiUrl = baseURI + "/GetProducts?DeptID=" + id;
                 //WebClient client = new WebClient();
@@ -53,9 +53,9 @@ namespace desciption
                 //string json = client.DownloadString(apiUrl);
 
                 string json = WebCom.GetJson(baseURI + "/GetProducts?DeptID=" + id.ToString());
-                DataSet ds = (DataSet)JsonConvert.DeserializeObject(json, (typeof(DataSet)));
+                List<Product> list = new JavaScriptSerializer().Deserialize<List<Product>>(json);
 
-                gvProducts.DataSource = ds.Tables[0];
+                gvProducts.DataSource = list;
                 gvProducts.DataBind();
             }
             else

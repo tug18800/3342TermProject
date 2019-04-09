@@ -164,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -172,6 +173,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TermProjectClasses\TermProjectClasses.csproj">
+      <Project>{35218294-A5DA-4BE9-A9EC-C62310BEE79C}</Project>
+      <Name>TermProjectClasses</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{80498186-cc63-48ac-8a15-f0f3e529bf52}</Project>
       <Name>Utilities</Name>

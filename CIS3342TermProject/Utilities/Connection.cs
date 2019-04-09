@@ -18,7 +18,6 @@ namespace Utilities
 
         SqlConnection myConnectionSql;
         SqlCommand objCmd;
-        SqlDataReader objDataReader;
         DataSet ds;
 
         public DBConnect()
