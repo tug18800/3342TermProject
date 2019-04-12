@@ -75,4 +75,43 @@ using System.Web.Script.Serialization;
                 return "An error occured";
             }
         }
+
+    public static string PushPOST(string Url, string str)
+    {
+        
+        try
+        {
+            WebRequest request = WebRequest.Create(Url + str);
+            request.Method = "POST";
+            request.ContentLength = str.Length;
+            request.ContentType = "x-www-form-urlencoded";
+
+
+            StreamWriter sw = new StreamWriter(request.GetRequestStream());
+            sw.Write(str);
+            sw.Flush();
+            sw.Close();
+
+            WebResponse response = request.GetResponse();
+            Stream stream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(stream);
+            String data = reader.ReadToEnd();
+
+            reader.Close();
+            response.Close();
+
+            if (data == "true")
+            {
+                return data;
+            }
+            else
+            {
+                return data;
+            }
+        }
+        catch (Exception ex)
+        {
+            return "An error occured";
+        }
     }
+}
