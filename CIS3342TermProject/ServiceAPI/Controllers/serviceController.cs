@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 using Utilities;
-using TermProjectClasses;
 using System.Data;
 using System.Data.SqlClient;
+using ServiceAPI.Models;
 
 namespace ServiceAPI.Controllers
 {
@@ -49,7 +49,7 @@ namespace ServiceAPI.Controllers
 
         // GET: api/service/5
         [HttpGet("GetProducts")]
-        public List<Product> GetProducts(int DeptID)
+        public List<Product> GetProducts(string DeptID)
         {
             SqlCommand comm = new SqlCommand();
             comm.CommandText = "TP_GetProductCatalog";
@@ -69,10 +69,13 @@ namespace ServiceAPI.Controllers
                 {
                     Product p = new Product();
 
-                    p.ProductID = (int)rows[i]["ProductID"];
-                    p.Desc = (string)rows[i]["Desc"];
+                    p.ProductID = (string)rows[i]["ProductID"];
+                    p.Title = (string)rows[i]["Title"];
+                    p.Description = (string)rows[i]["Desc"];
                     p.Price = (double)rows[i]["Price"];
-                    p.Url = (string)rows[i]["ProductURL"];
+                    p.Quantity = (int)rows[i]["Quantity"];
+                    p.ImageUrl = (string)rows[i]["ImageURL"];
+                    p.DepartmentID = (string)rows[i]["DepartmentID"];
 
                     list.Add(p);
                 }
@@ -87,8 +90,7 @@ namespace ServiceAPI.Controllers
         
         // POST: api/service
         [HttpPost("RegisterSite")]
-        public bool RegisterSite(string SiteID, string Description, string APIKey,
-                         string Email, Merchant merchant)
+        public bool RegisterSite(string SiteID, string Description, string APIKey, ContactInformation merchant)
         {
             SqlCommand comm = new SqlCommand();
             comm.CommandText = "TP_RegisterSite";
@@ -97,12 +99,13 @@ namespace ServiceAPI.Controllers
             comm.Parameters.AddWithValue("@SiteID", SiteID);
             comm.Parameters.AddWithValue("@APIKey", APIKey);
             comm.Parameters.AddWithValue("@Desc", Description);
-            comm.Parameters.AddWithValue("@Email", Email);
-            comm.Parameters.AddWithValue("@Phone", merchant.Phone);
+            comm.Parameters.AddWithValue("@Name", merchant.Address);
             comm.Parameters.AddWithValue("@Address", merchant.Address);
             comm.Parameters.AddWithValue("@City", merchant.City);
             comm.Parameters.AddWithValue("@State", merchant.State);
-            comm.Parameters.AddWithValue("@ZIP", merchant.ZIP);
+            comm.Parameters.AddWithValue("@ZIP", merchant.ZipCode);
+            comm.Parameters.AddWithValue("@Email", merchant.Email);
+            comm.Parameters.AddWithValue("@Phone", merchant.Phone);
 
             try
             {
@@ -136,14 +139,14 @@ namespace ServiceAPI.Controllers
             comm.Parameters.AddWithValue("@SiteID", SiteID);
             comm.Parameters.AddWithValue("@APIKey", APIKey);
             comm.Parameters.AddWithValue("@CustomerID", customer.CustomerID);
-            comm.Parameters.AddWithValue("@FirstName", customer.FirstName);
-            comm.Parameters.AddWithValue("@LastName", customer.LastName);
-            comm.Parameters.AddWithValue("@Age", customer.Age);
-            comm.Parameters.AddWithValue("@Phone", customer.Phone);
+            comm.Parameters.AddWithValue("@Name", customer.Name);
             comm.Parameters.AddWithValue("@Address", customer.Address);
             comm.Parameters.AddWithValue("@City", customer.City);
             comm.Parameters.AddWithValue("@State", customer.State);
-            comm.Parameters.AddWithValue("@ZIP", customer.ZIP);
+            comm.Parameters.AddWithValue("@ZIP", customer.ZipCode);
+            comm.Parameters.AddWithValue("@Phone", customer.Phone);
+            comm.Parameters.AddWithValue("@Email", customer.Email);
+
 
             try
             {

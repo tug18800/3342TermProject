@@ -55,6 +55,8 @@
                         <td><h4>APIKey</h4></td><td><asp:TextBox runat="server" ID="txtRegAPIKey"></asp:TextBox></td>
                     </tr><tr class="row">
                         <td><h4>Desc</h4></td><td><asp:TextBox runat="server" ID="txtRegDesc"></asp:TextBox></td>
+                         </tr><tr class="row">
+                        <td><h4>Name</h4></td><td><asp:TextBox runat="server" ID="txtRegName"></asp:TextBox></td>
                     </tr><tr class="row">
                         <td><h4>Email</h4></td><td><asp:TextBox runat="server" ID="txtRegEmail"></asp:TextBox></td>
                     </tr><tr class="row">

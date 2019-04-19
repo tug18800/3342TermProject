@@ -62,16 +62,30 @@ namespace desciption
 
         protected void btnRegSubmit_Click(object sender, EventArgs e)
         {
-            string[] x = new string[9];
-            string SiteID = txtRegSiteID.Text; x[0] = SiteID;
-            string APIKey = txtRegAPIKey.Text; x[1] = APIKey;
-            string Desc = txtRegDesc.Text; x[2] = Desc;
-            string Email = txtRegDesc.Text; x[3] = Email;
-            string Phone = txtRegPhone.Text; x[4] = Phone;
-            string Address = txtRegAddress.Text; x[5] = Phone;
-            string City = txtRegCity.Text; x[6] = Phone;
-            string State = txtRegState.Text; x[7] = Phone;
-            string ZIP = txtRegZip.Text; x[8] = Phone;
+            string x = "?";
+
+            string SiteID = txtRegSiteID.Text;
+            string APIKey = txtRegAPIKey.Text;
+            string Desc = txtRegDesc.Text;
+            string Name = txtRegName.Text;
+            string Email = txtRegDesc.Text;
+            string Phone = txtRegPhone.Text;
+            string Address = txtRegAddress.Text; 
+            string City = txtRegCity.Text;
+            string State = txtRegState.Text;
+            string ZIP = txtRegZip.Text;
+
+            x += "SiteID=" + SiteID + "&";
+            x += "APIKey=" + APIKey + "&";
+            x += "Desc=" + Desc + "&";
+            x += "Name=" + Name + "&";
+            x += "Address=" + Address + "&";
+            x += "City=" + City + "&";
+            x += "State=" + State + "&";
+            x += "ZipCode=" + ZIP + "&";
+            x += "Phone=" + Phone + "&";
+            x += "Email=" + Email + "&";
+
 
             string y = WebCom.PushPOST(baseURI + "/RecordPurchase", x);
 
@@ -80,19 +94,32 @@ namespace desciption
 
         protected void btnRecordSubmit_Click(object sender, EventArgs e)
         {
-            string x  = "ProductID="+txtRecProductID.Text+"&";
-            x += "Quantity="+txtRecQuantity.Text.ToString()+"&";
-            x += "SiteID=" + txtRecSiteID.Text+"&"; 
-            x[3] = APIKey= + txtRecAPIKey.Text + "&"; 
-            x[4] = CustomerID= + txtCustomerID.Text + "&";
-            x[5] = txtRecFName.Text + "&";
-            x[6] = txtRecLName.Text + "&";
-            x[7] = txtRecAge.Text + "&";
-            x[8] = txtRecPhone.Text + "&";
-            x[9] = txtRecAddress.Text + "&";
-            x[10] = txtRecCity.Text + "&";
-            x[11] = txtRecState.Text + "&";
-            x[12] = txtRecZip.Text + "&";
+            string x = "?";
+
+            string ProductID = txtRecProductID.Text;
+            string Quantity = txtRecQuantity.Text;
+            string SiteID = txtRecSiteID.Text;
+            string APIKey = txtRecAPIKey.Text;
+            string CustomerID = txtRecCustomerID.Text;
+            string Name = txtRecName.Text;
+            string Address = txtRecAddress.Text;
+            string City = txtRecCity.Text;
+            string State = txtRecState.Text;
+            string ZIP = txtRecZip.Text;
+            string Phone = txtRecPhone.Text;
+            string Email = txtRecEnail.Text;
+
+
+            x += "SiteID=" + SiteID + "&";
+            x += "APIKey=" + APIKey + "&";
+            x += "Desc=" + Desc + "&";
+            x += "Name=" + Name + "&";
+            x += "Address=" + Address + "&";
+            x += "City=" + City + "&";
+            x += "State=" + State + "&";
+            x += "ZipCode=" + ZIP + "&";
+            x += "Phone=" + Phone + "&";
+            x += "Email=" + Email + "&";
 
 
             string y = WebCom.PushPOST(baseURI + "/RecordPurchase", x);
