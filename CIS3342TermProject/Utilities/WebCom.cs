@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Script.Serialization;
 
     public static class WebCom
@@ -61,14 +62,7 @@ using System.Web.Script.Serialization;
                 reader.Close();
                 response.Close();
 
-                if (data == "\"City added successful!\"")
-                {
-                    return data;
-                }
-                else
-                {
-                    return data;
-                }
+                return data;
             }
             catch (Exception ex)
             {
@@ -81,6 +75,7 @@ using System.Web.Script.Serialization;
         
         try
         {
+            
             WebRequest request = WebRequest.Create(Url + str);
             request.Method = "POST";
             request.ContentLength = str.Length;

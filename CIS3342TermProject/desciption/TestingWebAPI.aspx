@@ -13,7 +13,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Label ID="stat" runat="server"></asp:Label>
         <div class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a href="#" class="navbar-brand">Testing Web API</a>
             <div class="collapse navbar-collapse">
@@ -21,7 +20,7 @@
                 </ul>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-md-4">
                     <label for="ddlDepartments">Departments</label>
@@ -35,10 +34,13 @@
                 <div class="col-md-12">
                     <asp:GridView ID="gvProducts" runat="server" CssClass="table table-bordered table-hover" AutoGenerateColumns="False">
                         <Columns>
-                            <asp:BoundField DataField="Desc" HeaderText="Description" />
+                            <asp:BoundField DataField="ProductID" HeaderText="ID" />
+                            <asp:BoundField DataField="Title" HeaderText="Title"/>
+                            <asp:BoundField DataField="Description" HeaderText="Description"/>
                             <asp:BoundField DataField="Price" HeaderText="Price" DataFormatString="{0:C}"/>
-                            <asp:ImageField DataImageUrlField="Url" HeaderText="Image" ControlStyle-Width="100">
-                            </asp:ImageField>
+                            <asp:BoundField DataField="Quantity" HeaderText="Quantity"/>
+                            <asp:ImageField DataImageUrlField="ImageURL" HeaderText="Image" ControlStyle-Width="100"/>
+                            <asp:BoundField DataField="DepartmentID" HeaderText="Department" DataFormatString="{0:C}"/>
                         </Columns>
 
                     </asp:GridView>
@@ -47,67 +49,40 @@
         </div>
         <div class="container">
             <p class="display-4">Register Site</p>
-            <table class="table table-dark">
-                <tbody>
-                    <tr class="row">
-                        <td><h4>Site ID</h4></td><td><asp:TextBox runat="server" ID="txtRegSiteID" ></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>APIKey</h4></td><td><asp:TextBox runat="server" ID="txtRegAPIKey"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>Desc</h4></td><td><asp:TextBox runat="server" ID="txtRegDesc"></asp:TextBox></td>
-                         </tr><tr class="row">
-                        <td><h4>Name</h4></td><td><asp:TextBox runat="server" ID="txtRegName"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>Email</h4></td><td><asp:TextBox runat="server" ID="txtRegEmail"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>Phone</h4></td><td><asp:TextBox runat="server" ID="txtRegPhone"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>Address</h4></td><td><asp:TextBox runat="server" ID="txtRegAddress"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>City</h4></td><td><asp:TextBox runat="server" ID="txtRegCity"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>State</h4></td><td><asp:TextBox runat="server" ID="txtRegState"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>Zip</h4></td><td><asp:TextBox runat="server" ID="txtRegZip"></asp:TextBox></td>
-                    </tr>
-                </tbody>
+            <table class="table table-dark table-sm">
+                <tr><td><h4 class="ml-2">Site ID</h4></td><td><asp:TextBox runat="server" ID="txtRegSiteID" ></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">APIKey</h4></td><td><asp:TextBox runat="server" ID="txtRegAPIKey"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">Desc</h4></td><td><asp:TextBox runat="server" ID="txtRegDesc"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">Name</h4></td><td><asp:TextBox runat="server" ID="txtRegName"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">Email</h4></td><td><asp:TextBox runat="server" ID="txtRegEmail"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">Phone</h4></td><td><asp:TextBox runat="server" ID="txtRegPhone"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">Address</h4></td><td><asp:TextBox runat="server" ID="txtRegAddress"></asp:TextBox></td> </tr>
+                <tr ><td><h4 class="ml-2">City</h4></td><td><asp:TextBox runat="server" ID="txtRegCity"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">State</h4></td><td><asp:TextBox runat="server" ID="txtRegState"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">Zip</h4></td><td><asp:TextBox runat="server" ID="txtRegZip"></asp:TextBox></td></tr>
             </table>
-            <asp:Button runat="server" ID="btnRegSubmit" Text="Register" CssClass="mr-auto" OnClick="btnRegSubmit_Click" />
+            <asp:Label ID="lblRegStat" runat="server" CssClass="float-left bg-primary"></asp:Label>
+            <asp:Button runat="server" ID="btnRegSubmit" Text="Register" CssClass="float-right my-4" OnClick="btnRegSubmit_Click" />
         </div>
+
         <div class="container">
-            <p class="display-4">Register Site</p>
-            <table class="table table-dark">
-                <tbody>
-                    <tr class="row">
-                        <td><h4>Product ID</h4></td><td><asp:TextBox runat="server" ID="txtRecProductID"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>Quantity</h4></td><td><asp:TextBox runat="server" ID="txtRecQuantity"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>Site ID</h4></td><td><asp:TextBox runat="server" ID="txtRecSiteID"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>API Key</h4></td><td><asp:TextBox runat="server" ID="txtRecAPIKey"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>CustomerID</h4></td><td><asp:TextBox runat="server" ID="txtCustomerID"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>First Name</h4></td><td><asp:TextBox runat="server" ID="txtRecFName"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>Last Name</h4></td><td><asp:TextBox runat="server" ID="txtRecLName"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>Age</h4></td><td><asp:TextBox runat="server" ID="txtRecAge"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>Phone</h4></td><td><asp:TextBox runat="server" ID="txtRecPhone"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>Address</h4></td><td><asp:TextBox runat="server" ID="txtRecAddress"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>City</h4></td><td><asp:TextBox runat="server" ID="txtRecCity"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>State</h4></td><td><asp:TextBox runat="server" ID="txtRecState"></asp:TextBox></td>
-                    </tr><tr class="row">
-                        <td><h4>Zip</h4></td><td><asp:TextBox runat="server" ID="txtRecZip"></asp:TextBox></td>
-                    </tr>
-                </tbody>
+            <p class="display-4 mt-5">Register Site</p>
+            <table class="table table-dark table-sm">
+                <tr><td><h4 class="ml-2">Product ID</h4></td><td><asp:TextBox runat="server" ID="txtRecProductID"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">Quantity</h4></td><td><asp:TextBox runat="server" ID="txtRecQuantity"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">Site ID</h4></td><td><asp:TextBox runat="server" ID="txtRecSiteID"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">API Key</h4></td><td><asp:TextBox runat="server" ID="txtRecAPIKey"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">CustomerID</h4></td><td><asp:TextBox runat="server" ID="txtRecCustomerID"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">Name</h4></td><td><asp:TextBox runat="server" ID="txtRecName"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">Phone</h4></td><td><asp:TextBox runat="server" ID="txtRecPhone"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">Email</h4></td><td><asp:TextBox runat="server" ID="txtRecEmail"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">Address</h4></td><td><asp:TextBox runat="server" ID="txtRecAddress"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">City</h4></td><td><asp:TextBox runat="server" ID="txtRecCity"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">State</h4></td><td><asp:TextBox runat="server" ID="txtRecState"></asp:TextBox></td></tr>
+                <tr><td><h4 class="ml-2">Zip</h4></td><td><asp:TextBox runat="server" ID="txtRecZip"></asp:TextBox></td></tr>
             </table>
-            <asp:Button runat="server" ID="btnRecordSubmit" Text="Record" CssClass="mr-auto" OnClick="btnRecordSubmit_Click" />
+            <asp:Label ID="lblRecStat" runat="server" CssClass="float-left bg-primary"></asp:Label>
+            <asp:Button runat="server" ID="btnRecordSubmit" Text="Record" CssClass="float-right my-4" OnClick="btnRecordSubmit_Click" />
         </div>
     </form>
 

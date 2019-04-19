@@ -13,7 +13,7 @@ using ServiceAPI.Models;
 namespace ServiceAPI.Controllers
 {
     [Produces("application/json")]
-    [Route("api/service/Merchant")]
+    [Route("api/service/Merchants")]
     public class serviceController : Controller
     {
         // GET: api/service
@@ -25,7 +25,7 @@ namespace ServiceAPI.Controllers
             comm.CommandType = CommandType.StoredProcedure;
 
             DataSet ds;
-            List<string> dep = new List<string> (); ;
+            List<string> dep = new List<string>(); ;
 
             try
             {
@@ -34,12 +34,12 @@ namespace ServiceAPI.Controllers
 
                 DataRowCollection rows = ds.Tables[0].Rows;
 
-                for(int i = 0; i < rows.Count; i++)
+                for (int i = 0; i < rows.Count; i++)
                 {
                     dep.Add((string)rows[i]["DepartmentName"]);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 dep = null;
             }
@@ -65,7 +65,7 @@ namespace ServiceAPI.Controllers
 
                 DataRowCollection rows = ds.Tables[0].Rows;
 
-                for(int i =0; i < rows.Count; i++)
+                for (int i = 0; i < rows.Count; i++)
                 {
                     Product p = new Product();
 
@@ -87,15 +87,14 @@ namespace ServiceAPI.Controllers
 
             return list;
         }
-        
+
         // POST: api/service
         [HttpPost("RegisterSite")]
-        public bool RegisterSite(string SiteID, string Description, string APIKey, ContactInformation merchant)
+        public bool RegisterSite(string SiteID, string Description, string APIKey, [FromBody]ContactInformation merchant)
         {
             SqlCommand comm = new SqlCommand();
             comm.CommandText = "TP_RegisterSite";
             comm.CommandType = CommandType.StoredProcedure;
-;
             comm.Parameters.AddWithValue("@SiteID", SiteID);
             comm.Parameters.AddWithValue("@APIKey", APIKey);
             comm.Parameters.AddWithValue("@Desc", Description);
@@ -128,7 +127,7 @@ namespace ServiceAPI.Controllers
         // PUT: api/service/5
         [HttpPost("RecordPurchase")]
         public bool RecordPurchase(string ProductID, int Quantity, string SiteID, 
-                                   string APIKey, Customer customer)
+                                    string APIKey, [FromBody]Customer customer)
         {
             SqlCommand comm = new SqlCommand();
             comm.CommandText = "TP_RecordPurchase";

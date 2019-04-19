@@ -22,15 +22,6 @@ namespace desciption {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// stat control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label stat;
-        
-        /// <summary>
         /// ddlDepartments control.
         /// </summary>
         /// <remarks>
@@ -139,6 +130,15 @@ namespace desciption {
         protected global::System.Web.UI.WebControls.TextBox txtRegZip;
         
         /// <summary>
+        /// lblRegStat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRegStat;
+        
+        /// <summary>
         /// btnRegSubmit control.
         /// </summary>
         /// <remarks>
@@ -184,40 +184,22 @@ namespace desciption {
         protected global::System.Web.UI.WebControls.TextBox txtRecAPIKey;
         
         /// <summary>
-        /// txtCustomerID control.
+        /// txtRecCustomerID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCustomerID;
+        protected global::System.Web.UI.WebControls.TextBox txtRecCustomerID;
         
         /// <summary>
-        /// txtRecFName control.
+        /// txtRecName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRecFName;
-        
-        /// <summary>
-        /// txtRecLName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRecLName;
-        
-        /// <summary>
-        /// txtRecAge control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRecAge;
+        protected global::System.Web.UI.WebControls.TextBox txtRecName;
         
         /// <summary>
         /// txtRecPhone control.
@@ -227,6 +209,15 @@ namespace desciption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRecPhone;
+        
+        /// <summary>
+        /// txtRecEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRecEmail;
         
         /// <summary>
         /// txtRecAddress control.
@@ -263,6 +254,15 @@ namespace desciption {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRecZip;
+        
+        /// <summary>
+        /// lblRecStat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRecStat;
         
         /// <summary>
         /// btnRecordSubmit control.

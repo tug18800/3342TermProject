@@ -174,7 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TermProjectClasses\TermProjectClasses.csproj">
-      <Project>{35218294-A5DA-4BE9-A9EC-C62310BEE79C}</Project>
+      <Project>{35218294-a5da-4be9-a9ec-c62310bee79c}</Project>
       <Name>TermProjectClasses</Name>
     </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
