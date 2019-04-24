@@ -32,7 +32,7 @@
                         <div class="col-sm-5">
                         	
                         	<div class="form-box">
-                                <asp:Label
+                                <asp:Label runat="server" ID="lblLogInStatus" Visible="false" CssClass="text-center text-danger lead"></asp:Label>
                                 <asp:ValidationSummary runat="server" ID="valsumLogIn" CssClass="lead text-danger text-center" DisplayMode="List" ValidationGroup="vgLogIn"
                                     HeaderText="Please fill in the following correctly:" />
 	                        	<div class="form-top">
@@ -48,7 +48,7 @@
 				                    <div class="login-form">
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="form-username">Username</label>
-				                        	<asp:Textbox runat="server" type="text" placeholder="Username..." class="form-username form-control" id="txtUsername" />
+				                        	<asp:Textbox runat="server" type="text" placeholder="Username..." class="form-username form-control" id="txtUsername" OnTextChanged="txtUsername_TextChanged" />
                                             <asp:RequiredFieldValidator ID="valUserName" runat="server" ControlToValidate="txtUserName" CssClass="text-danger"
                                                 ErrorMessage="You must enter a username" ValidationGroup="vgLogIn"></asp:RequiredFieldValidator>
 				                        </div>
@@ -74,6 +74,7 @@
                         	
                         <div class="col-sm-5">
                         	<div class="form-box">
+                                <asp:Label runat="server" ID="lblSignUpStatus" Visible="false" CssClass="text-center text-danger lead"></asp:Label>
                         	<asp:ValidationSummary ID="valsumNewUser" runat="server" CssClass="lead text-danger text-center" ValidationGroup="vgNew" DisplayMode="List" 
                                 HeaderText="Please fill in the following correctly:"  />
 
@@ -92,7 +93,7 @@
 				                    <div class="registration-form">
 				                    	<div class="form-group">
 				                    		<label class="sr-only" for="form-first-name">Username</label>
-				                        	<asp:Textbox runat="server" placeholder="Username..." class="form-first-name form-control" id="txtNewUsername" />
+				                        	<asp:Textbox runat="server" placeholder="Username..." class="form-first-name form-control" id="txtNewUsername" OnTextChanged="txtNewUsername_TextChanged" />
                                             <asp:RequiredFieldValidator ID="valNewUsername" runat="server" ControlToValidate="txtNewUsername" CssClass="text-danger"
                                                 ErrorMessage="Username" Display="Dynamic" ValidationGroup="vgNew">You must enter a username</asp:RequiredFieldValidator>
 				                        </div>

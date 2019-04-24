@@ -117,6 +117,6 @@ C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Micro
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\AspNet.ScriptManager.jQuery.dll
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Utilities.dll
-C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\ValidationClass.dll
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Utilities.pdb
-C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\ValidationClass.pdb
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\TermProjectClasses.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\TermProjectClasses.pdb

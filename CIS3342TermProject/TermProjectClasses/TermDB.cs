@@ -49,7 +49,7 @@ namespace TermProjectClasses
             SqlCommand comm = new SqlCommand();
 
             comm.CommandType = System.Data.CommandType.StoredProcedure;
-            comm.CommandText = "GetUser";
+            comm.CommandText = "TP_GetUser";
             comm.Parameters.AddWithValue("@username", username);
             comm.Parameters.AddWithValue("@password", password);
 
@@ -67,14 +67,14 @@ namespace TermProjectClasses
                 DataRow row = ds.Tables[0].Rows[0];
 
                 User user = new User();
-                user.Username = (string)row["Name"];
+                user.Username = (string)row["LoginId"];
                 user.Name = (string)row["Name"];
-                user.Phone = (string)row["Name"];
-                user.Email = (string)row["Name"];
-                user.Address = (string)row["Name"];
-                user.City = (string)row["Address"];
-                user.State = (string)row["Name"];
-                user.ZipCode = (int)row["Name"];
+                user.Phone = (string)row["Phone"];
+                user.Email = (string)row["Email"];
+                user.Address = (string)row["Address"];
+                user.City = (string)row["City"];
+                user.State = (string)row["State"];
+                user.ZipCode = (int)row["ZipCode"];
 
                 error = "";
                 return user;

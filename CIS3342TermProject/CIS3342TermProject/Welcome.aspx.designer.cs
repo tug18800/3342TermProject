@@ -22,6 +22,15 @@ namespace CIS3342TermProject {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// lblLogInStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLogInStatus;
+        
+        /// <summary>
         /// valsumLogIn control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,15 @@ namespace CIS3342TermProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogIn;
+        
+        /// <summary>
+        /// lblSignUpStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSignUpStatus;
         
         /// <summary>
         /// valsumNewUser control.

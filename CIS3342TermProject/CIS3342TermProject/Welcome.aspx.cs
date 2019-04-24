@@ -29,16 +29,16 @@ namespace CIS3342TermProject
                     user.Username = username;
                     user.Password = txtNewPassword.Text;
                     user.Name = txtName.Text;
-                                 
+
                     Session["user"] = user;
                     Response.Redirect("SignUp.aspx");
                 }
                 else
                 {
-                    
-                }
-                
+                    lblSignUpStatus.Text = error;
+                    lblSignUpStatus.Visible = true;
 
+                }
             }
         }
 
@@ -46,11 +46,37 @@ namespace CIS3342TermProject
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-
+            string error;
             if (IsValid)
             {
-                User user = TermDB.GetUser(username, password);
+               
+                User user = TermDB.GetUser(username, password, out error);
+                if (user != null & error == "")
+                {
+                    Session["user"] = user;
+                    Response.Redirect("Products.aspx");
+                }
+                else
+                {
+                    lblLogInStatus.Text = error;
+                    lblLogInStatus.Visible = true;
+                }
+            }
+        }
 
+        protected void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            if(lblLogInStatus.Visible)
+            {
+                lblLogInStatus.Visible = !lblLogInStatus.Visible;
+            }
+        }
+
+        protected void txtNewUsername_TextChanged(object sender, EventArgs e)
+        {
+            if (lblSignUpStatus.Visible)
+            {
+                lblSignUpStatus.Visible = !lblSignUpStatus.Visible;
             }
         }
     }
