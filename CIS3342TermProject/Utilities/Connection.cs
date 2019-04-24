@@ -133,6 +133,18 @@ namespace Utilities
             return myDataSet;          
         }
 
+        public DataSet GetDataSetUsingCmdObj(SqlCommand theCommand, out int theRecordCount)
+        {
+            theCommand.Connection = myConnectionSql;
+            SqlDataAdapter myDataAdapter = new SqlDataAdapter(theCommand);
+            DataSet myDataSet = new DataSet();
+            myDataAdapter.Fill(myDataSet);
+            ds = myDataSet;
+            theRecordCount = ds.Tables[0].Rows.Count;
+
+            return myDataSet;
+        }
+
         // This method is used to retrieve a row from a DataSet.
         // Inputs: (1) the DataSet used for row retrieval.
         //         (2) the zero-based index of the row to retrieve from the DataSet.

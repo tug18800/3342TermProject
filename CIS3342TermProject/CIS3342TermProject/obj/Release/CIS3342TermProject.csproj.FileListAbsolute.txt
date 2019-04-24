@@ -72,3 +72,51 @@ C:\Users\tug18800\Desktop\master\CIS3342TermProject\CIS3342TermProject\obj\Relea
 C:\Users\tug18800\Desktop\master\CIS3342TermProject\CIS3342TermProject\obj\Release\CIS3342TermProject.csproj.CopyComplete
 C:\Users\tug18800\Desktop\master\CIS3342TermProject\CIS3342TermProject\obj\Release\CIS3342TermProject.dll
 C:\Users\tug18800\Desktop\master\CIS3342TermProject\CIS3342TermProject\obj\Release\CIS3342TermProject.pdb
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\ApplicationInsights.config
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\csc.exe
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\System.Collections.Immutable.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\System.Reflection.Metadata.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\vbc.exe
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\VBCSCompiler.exe
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\roslyn\VBCSCompiler.exe.config
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\CIS3342TermProject.dll.config
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\CIS3342TermProject.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\CIS3342TermProject.pdb
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.Agent.Intercept.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.DependencyCollector.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.PerfCounterCollector.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.ServerTelemetryChannel.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.Web.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.WindowsServer.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.ApplicationInsights.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\System.Diagnostics.DiagnosticSource.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.DependencyCollector.xml
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.ServerTelemetryChannel.xml
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.Web.xml
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AI.WindowsServer.xml
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.ApplicationInsights.xml
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\bin\System.Diagnostics.DiagnosticSource.xml
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\obj\Release\CIS3342TermProject.csprojAssemblyReference.cache
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\obj\Release\CIS3342TermProject.csproj.CoreCompileInputs.cache
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\obj\Release\CIS3342TermProject.csproj.CopyComplete
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\obj\Release\CIS3342TermProject.dll
+F:\E-drive-office\Office Work\Chegg\CSharp\Robin\13\3342TermProject-master\CIS3342TermProject\CIS3342TermProject\obj\Release\CIS3342TermProject.pdb
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Utilities.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\ValidationClass.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Utilities.pdb
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\ValidationClass.pdb

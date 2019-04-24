@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 
 namespace ValidationClass
 {
     public static class Validation
     {
-        public static bool IsEmpty(TextBox txtBox)
+        public static bool IsEmpty(string str)
         {
-            if (txtBox.Text == "")
+            if (str == "")
             {
                 return true;
             }
@@ -20,10 +17,10 @@ namespace ValidationClass
             return false;
         }
 
-        public static bool HasLetters(TextBox txtBox)
+        public static bool HasLetters(string str)
         {
             Regex regex = new Regex("^[/.a-z]+$");
-            string value = txtBox.Text.ToLower();
+            string value = str.ToLower();
             if (regex.IsMatch(value))
             {
                 return true;
@@ -32,10 +29,10 @@ namespace ValidationClass
             return false;
         }
 
-        public static bool HasNumbers(TextBox txtBox)
+        public static bool HasNumbers(string str)
         {
             Regex regex = new Regex("[0-9]");
-            if (regex.IsMatch(txtBox.Text))
+            if (regex.IsMatch(str))
             {
                 return true;
             }
@@ -43,38 +40,11 @@ namespace ValidationClass
             return false;
         }
 
-        public static string IsOperation(TextBox txtBox)
-        {
-            Regex regexGT = new Regex("[>]");
-            Regex regexLT = new Regex("[<]");
-            Regex regexET = new Regex("[=]");
-            Regex regexNET = new Regex("[!=]");
-
-            if (regexGT.IsMatch(txtBox.Text))
-            {
-                return "GT";
-            }
-            else if (regexLT.IsMatch(txtBox.Text))
-            {
-                return "LT";
-            }
-            else if (regexET.IsMatch(txtBox.Text))
-            {
-                return "ET";
-            }
-            else if (regexNET.IsMatch(txtBox.Text))
-            {
-                return "NET";
-            }
-
-            return "false";
-        }
-
-        public static bool HasComma(TextBox txtBox)
+        public static bool HasComma(string str)
         {
             Regex regexComma = new Regex("[,]");
 
-            if (regexComma.IsMatch(txtBox.Text))
+            if (regexComma.IsMatch(str))
             {
                 return true;
             }
@@ -82,10 +52,35 @@ namespace ValidationClass
             return false;
         }
 
-        public static bool ValidateName(TextBox txtBox)
+        public static bool HasSQL(string str)
+        {
+            Regex select = new Regex("^[SELECTselect]+$");
+            Regex delete = new Regex("^[DELETEDelete]+$");
+            Regex drop = new Regex("^[DROPdrop]+$");
+            Regex insert = new Regex("^[INSERTinsert]+$");
+
+            List<Regex> sql = new List<Regex>();
+            sql.Add(select);
+            sql.Add(delete);
+            sql.Add(drop);
+            sql.Add(insert);
+
+            for (int i = 0; i < sql.Count; i++)
+            {
+                if (sql[i].IsMatch(str))
+                {
+                    return true;
+                }
+
+            }
+
+            return false;
+        }
+
+        public static bool ValidateName(string str)
         {
 
-            if ((txtBox.Text != "") && !(txtBox.Text.Contains("\\d")))
+            if ((str != "") && !(str.Contains("\\d")))
             {
                 return true;
             }
@@ -93,9 +88,9 @@ namespace ValidationClass
             return false;
         }
 
-        public static bool ValidatePhone(TextBox txtBox)
+        public static bool ValidatePhone(string str)
         {
-            if (txtBox.Text != "" && !(txtBox.Text.Contains("\\^[0-9]+$")))
+            if (str != "" && !(str.Contains("\\^[0-9]+$")))
             {
                 return true;
             }
@@ -128,31 +123,5 @@ namespace ValidationClass
 
             return false;
         }
-
-        public static string[] GetFiledFromSearch(string[] search)
-        {
-            string str = search[0] + " " + search[1];
-            str = str.ToLower();
-            switch (str)
-            {
-                case "median income": str = "medianIncome"; break;
-                case "owners percent": str = "ownersPercent"; break;
-                case "renters percent": str = "rentersPercent"; break;
-                case "home value": str = "homeValue"; break;
-                case "median age": str = "medianAge"; break;
-                case "unemployment percent": str = "unemploymentPercent"; break;
-                case "crime index": str = "crimeIndex"; break;
-            }
-
-            string[] result = new string[3];
-
-            result[0] = str;
-            result[1] = search[2];
-            result[2] = search[3];
-
-            return result;
-        }
-
-
     }
 }

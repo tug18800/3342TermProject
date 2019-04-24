@@ -1,0 +1,6 @@
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ValidationClass\bin\Release\ValidationClass.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ValidationClass\bin\Release\ValidationClass.pdb
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ValidationClass\obj\Release\ValidationClass.csprojAssemblyReference.cache
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ValidationClass\obj\Release\ValidationClass.csproj.CoreCompileInputs.cache
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ValidationClass\obj\Release\ValidationClass.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ValidationClass\obj\Release\ValidationClass.pdb
