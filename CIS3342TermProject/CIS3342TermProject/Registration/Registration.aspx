@@ -16,9 +16,6 @@
         <link href="../css/style.css" rel="stylesheet" />
     </head>
     <body>
-        <asp:Label runat="server" ID="lblAccessDenied" CssClass="text-center text-danger display-4" Visible="false"></asp:Label><br />
-        <asp:Label runat="server" ID="lblDeniedPrompt" CssClass="text-center text-danger lead mt-3" Visible="false"></asp:Label><br />
-        <a href="Welcome.aspx" role="button" id="btnLogin" runat="server" visible="false" class="btn btn-primary mt-4 text-center">To Login</a>
         <form id="form1" runat="server">
             <asp:Label runat="server" CssClass="h1 ml-auto mr-auto" ID="lblThanks"></asp:Label><br />
             <asp:Label runat="server" ID="lblUserStatus" Visible="false" CssClass="text-center text-danger lead ml-auto mr-auto"></asp:Label>                               
@@ -89,6 +86,10 @@
 				                        	<asp:Textbox runat="server" type="text" placeholder="API URL..." class="form-password form-control" id="txtAPI" />
                                             <asp:RequiredFieldValidator ID="rfAPI" runat="server" ControlToValidate="txtAPI" CssClass="text-danger"
                                                 ErrorMessage="API URL" ValidationGroup="vgReg">You must enter your store's Web API URL</asp:RequiredFieldValidator>
+				                        </div>
+                                        <hr />
+                                        <div class="form-group">
+				                        	<asp:Textbox runat="server" TextMode="MultiLine" type="text" placeholder="Company Description..." class="form-password form-control" id="txtDescription" />
 				                        </div>
 				                    </div>
 			                    </div>

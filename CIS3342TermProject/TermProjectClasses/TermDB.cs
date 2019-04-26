@@ -34,13 +34,13 @@ namespace TermProjectClasses
                 error = "";
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 error = "An error occured while connecting to the database. || Error: " + ex.GetBaseException();
                 return false;
             }
 
-           
+
         }
 
         public static User GetUser(string username, string password, out string error)
@@ -58,7 +58,7 @@ namespace TermProjectClasses
                 int n = 0;
                 DataSet ds = db.GetDataSetUsingCmdObj(comm, out n);
 
-                if(ds == null || n <= 0)
+                if (ds == null || n <= 0)
                 {
                     error = "We do not have an accound with that username and password. Try again.";
                     return null;
@@ -84,7 +84,7 @@ namespace TermProjectClasses
                 error = "An error occured while connecting to the database. || Error: " + ex.GetBaseException();
                 return null;
             }
-           
+
         }
 
         public static DataSet GetFirstQuestionSet()
@@ -99,7 +99,7 @@ namespace TermProjectClasses
                 int n = 0;
                 DataSet ds = db.GetDataSetUsingCmdObj(comm, out n);
 
-                if(ds !=null & n >0)
+                if (ds != null & n > 0)
                 {
                     return ds;
                 }
@@ -108,7 +108,7 @@ namespace TermProjectClasses
                     return null;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return null;
             }
@@ -203,49 +203,6 @@ namespace TermProjectClasses
             error = "";
             try
             {
-                
-                int n = DB.DoUpdateUsingCmdObj(comm);
-
-                if (n > 0)
-                {
-                    error = ""; 
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch(Exception ex)
-            {
-                error = "An error has occured || Error: " + ex.ToString();
-                return false;
-            }
-        }
-
-        public static bool SaveMerchant(Merchant merchant, out string error)
-        {
-            DBConnect DB = new DBConnect();
-            SqlCommand comm = new SqlCommand();
-
-            comm.CommandType = CommandType.StoredProcedure;
-            comm.CommandText = "TP_SaveUser";
-
-            comm.Parameters.AddWithValue("@username", merchant.Username);
-            comm.Parameters.AddWithValue("@password", merchant.Password);
-            comm.Parameters.AddWithValue("@name", merchant.Name);
-            comm.Parameters.AddWithValue("@email", merchant.Email);
-            comm.Parameters.AddWithValue("@address", merchant.Address);
-            comm.Parameters.AddWithValue("@city", merchant.City);
-            comm.Parameters.AddWithValue("@state", merchant.State);
-            comm.Parameters.AddWithValue("@zipCode", merchant.ZipCode);
-            comm.Parameters.AddWithValue("@phone", merchant.Phone);
-            comm.Parameters.AddWithValue("@phone", merchant.Phone);
-
-
-            error = "";
-            try
-            {
 
                 int n = DB.DoUpdateUsingCmdObj(comm);
 
@@ -265,8 +222,69 @@ namespace TermProjectClasses
                 return false;
             }
         }
-    }
 
+        public static bool SaveMerchant(Merchant merchant, out string error)
+        {
+            ContactInformation contact = new ContactInformation();
+            contact.Name = merchant.Name;
+            contact.Address = merchant.Address;
+            contact.City = merchant.City;
+            contact.State = merchant.State;
+            contact.ZipCode = merchant.ZipCode;
+            contact.Email = merchant.Email;
+            contact.Phone = merchant.Phone;
 
+            string url = "http://cis-iis2.temple.edu/Spring2019/CIS3342_tug18800/TermProjectWS/api/service/Merchants" + "/RegisterSite/" + merchant.SiteID + "/" + merchant.Description + "/" + merchant.APIKey;
+            string result = WebCom.PushPOST(url, contact);
+
+            if (result == "false" || result == "An error has occured retrieving data from the Web API.")
+            {
+                error = "Sorry, we could not finish the transaction! Please check your Api Url and try again!";
+                return false;
+            }
+            DBConnect DB = new DBConnect();
+            SqlCommand comm = new SqlCommand();
+
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandText = "TP_SaveMerchant";
+
+            comm.Parameters.AddWithValue("@username", merchant.Username);
+            comm.Parameters.AddWithValue("@password", merchant.Password);
+            comm.Parameters.AddWithValue("@apiKey", merchant.APIKey);
+            comm.Parameters.AddWithValue("@apiUrl", merchant.ApiUrl);
+            comm.Parameters.AddWithValue("@siteID", merchant.SiteID);
+            comm.Parameters.AddWithValue("@description", merchant.Description);
+            comm.Parameters.AddWithValue("@name", merchant.Name);
+            comm.Parameters.AddWithValue("@phone", merchant.Phone);
+            comm.Parameters.AddWithValue("@email", merchant.Email);
+            comm.Parameters.AddWithValue("@address", merchant.Address);
+            comm.Parameters.AddWithValue("@city", merchant.City);
+            comm.Parameters.AddWithValue("@state", merchant.State);
+            comm.Parameters.AddWithValue("@zipCode", merchant.ZipCode);
+
+            error = "";
+            try
+            {
+
+                int n = DB.DoUpdateUsingCmdObj(comm);
+
+                if (n > 0)
+                {
+                    error = "";
+                    return true;
+                }
+                else
+                {
+                    error = "Something went wrong!";
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                error = "An error has occured || Error: " + ex.ToString();
+                return false;
+            }
+        }
     }
 }
+

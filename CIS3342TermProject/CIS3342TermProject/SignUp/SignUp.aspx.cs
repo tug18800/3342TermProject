@@ -52,7 +52,7 @@ namespace CIS3342TermProject
                 user.Phone = txtPhone.Text;
 
                 int billZip;
-                user.Billing = new TermProjectClass.ContactInformation();
+                user.Billing = new ContactInformation();
                 user.Billing.Address = txtBillingAddress.Text;
                 user.Billing.City = txtBillingCity.Text;
                 user.Billing.State = ddlBillingState.SelectedValue;

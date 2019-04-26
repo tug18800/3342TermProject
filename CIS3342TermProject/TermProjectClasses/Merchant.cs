@@ -13,6 +13,9 @@ namespace TermProjectClasses
         string[] KeyBinding = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
         private string apiKey;
+        private string apiUrl;
+        private string siteID;
+        private string description;
         private List<Object> departments;
         private List<Product> products;
 
@@ -24,10 +27,11 @@ namespace TermProjectClasses
             get => apiKey;
             set => apiKey = value;
         }
-
+        public string ApiUrl { get => apiUrl; set => apiUrl = value; }
+        public string SiteID { get => siteID; set => siteID = value; }
+        public string Description { get => description; set => description = value; }
         public List<object> Departments { get => departments; set => departments = value; }
         public List<Product> Products { get => products; set => products = value; }
-
         public string GetRandomKey()
         {
             //Used to slow down Random's seed generation so a different integer can be produced every iteration.

@@ -1,0 +1,10 @@
+
+
+http://cis-iis2.temple.edu/Spring2019/CIS3342_tuf67637/TermProjectWS/api/service/Merchants/GetDepartments/
+{"departmentNumber":"1","departmentName":"food","departmentImage":"http://shinewithplants.com/wp-content/uploads/2016/04/plant-based-diet-7.jpg"}
+
+http://cis-iis2.temple.edu/Spring2019/CIS3342_tug07294/TermProjectWS/api/service/Merchants/GetDepartments/
+{"departmentNumber":1,"departmentName":"Energy","departmentImage":"https://images-na.ssl-images-amazon.com/images/I/41%2BgJmPFr4L.jpg"}
+
+http://cis-iis2.temple.edu/Spring2019/CIS3342_tug19607/TermProjectWS/api/service/Merchants/GetDepartments/
+[{"departmentNumber":1000,"departmentName":"dESKTOPS"},{"departmentNumber":1001,"departmentName":"tuar"}]

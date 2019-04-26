@@ -23,8 +23,17 @@ namespace CIS3342TermProject.Registration
         {
             Merchant merchant = LoadMerchant();
 
-            TermDB.SaveMerchant();
-
+            string error;
+            if (TermDB.SaveMerchant(merchant, out error) & error == "")
+            {
+                Session["merchant"] = merchant;
+                Response.Redirect("Product.aspx");
+            }
+            else
+            {
+                lblUserStatus.Text = error;
+                lblUserStatus.Visible = true;
+            }
         }
 
         private Merchant LoadMerchant()
@@ -35,6 +44,8 @@ namespace CIS3342TermProject.Registration
             {
                 merchant.Username = txtUsername.Text;
                 merchant.Password = txtPassword.Text;
+                merchant.ApiUrl = txtAPI.Text;
+                merchant.Description = txtDescription.Text;
                 merchant.Name = txtName.Text;
                 merchant.Address = txtAddress.Text;
                 merchant.City = txtCity.Text;
@@ -45,6 +56,7 @@ namespace CIS3342TermProject.Registration
                 merchant.Phone = txtPhone.Text;
 
                 merchant.APIKey = merchant.GetRandomKey();
+                merchant.SiteID = merchant.GetRandomKey();
 
                 return merchant;
             }

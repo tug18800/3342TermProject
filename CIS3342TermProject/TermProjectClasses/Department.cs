@@ -15,8 +15,8 @@ namespace TermProjectClasses
 
         public Department() { }
 
-        public string DeptID { get => deptID; set => deptID = value; }
-        public string DeptName { get => deptName; set => deptName = value; }
-        public string DeptImage { get => deptImage; set => deptImage = value; }
+        public string departmentNumber { get => deptID; set => deptID = value; }
+        public string departmentName { get => deptName; set => deptName = value; }
+        public string departmentImage { get => deptImage; set => deptImage = value; }
     }
 }
