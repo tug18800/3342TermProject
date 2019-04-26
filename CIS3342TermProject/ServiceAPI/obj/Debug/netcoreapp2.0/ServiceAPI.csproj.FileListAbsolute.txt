@@ -19,9 +19,7 @@ C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ServiceAPI\bin\Debug\netcore
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\ServiceAPI.runtimeconfig.dev.json
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\ServiceAPI.dll
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\ServiceAPI.pdb
-C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\TermProjectClasses.dll
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\Utilities.dll
-C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\TermProjectClasses.pdb
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ServiceAPI\bin\Debug\netcoreapp2.0\Utilities.pdb
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ServiceAPI\obj\Debug\netcoreapp2.0\ServiceAPI.csprojAssemblyReference.cache
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\ServiceAPI\obj\Debug\netcoreapp2.0\ServiceAPI.csproj.CoreCompileInputs.cache

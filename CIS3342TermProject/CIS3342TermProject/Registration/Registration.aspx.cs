@@ -21,10 +21,39 @@ namespace CIS3342TermProject.Registration
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            Merchant merchant = new Merchant();
+            Merchant merchant = LoadMerchant();
 
-            merchant.MerchantID = txtUsername.Text;
-            merchant.
+            TermDB.SaveMerchant();
+
+        }
+
+        private Merchant LoadMerchant()
+        {
+            Merchant merchant = new Merchant();
+            int zip;
+            try
+            {
+                merchant.Username = txtUsername.Text;
+                merchant.Password = txtPassword.Text;
+                merchant.Name = txtName.Text;
+                merchant.Address = txtAddress.Text;
+                merchant.City = txtCity.Text;
+                merchant.State = ddlStates.Text;
+                Int32.TryParse(txtZipCode.Text, out zip);
+                merchant.ZipCode = zip;
+                merchant.Email = txtEmail.Text;
+                merchant.Phone = txtPhone.Text;
+
+                merchant.APIKey = merchant.GetRandomKey();
+
+                return merchant;
+            }
+            catch (Exception ex)
+            {
+                lblUserStatus.Text = "The Zip Code you have enetered is invalid. Please try again";
+                lblUserStatus.Visible = true;
+                return null;
+            }
         }
     }
 }

@@ -223,6 +223,50 @@ namespace TermProjectClasses
             }
         }
 
+        public static bool SaveMerchant(Merchant merchant, out string error)
+        {
+            DBConnect DB = new DBConnect();
+            SqlCommand comm = new SqlCommand();
+
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandText = "TP_SaveUser";
+
+            comm.Parameters.AddWithValue("@username", merchant.Username);
+            comm.Parameters.AddWithValue("@password", merchant.Password);
+            comm.Parameters.AddWithValue("@name", merchant.Name);
+            comm.Parameters.AddWithValue("@email", merchant.Email);
+            comm.Parameters.AddWithValue("@address", merchant.Address);
+            comm.Parameters.AddWithValue("@city", merchant.City);
+            comm.Parameters.AddWithValue("@state", merchant.State);
+            comm.Parameters.AddWithValue("@zipCode", merchant.ZipCode);
+            comm.Parameters.AddWithValue("@phone", merchant.Phone);
+            comm.Parameters.AddWithValue("@phone", merchant.Phone);
+
+
+            error = "";
+            try
+            {
+
+                int n = DB.DoUpdateUsingCmdObj(comm);
+
+                if (n > 0)
+                {
+                    error = "";
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                error = "An error has occured || Error: " + ex.ToString();
+                return false;
+            }
+        }
+    }
+
 
     }
 }

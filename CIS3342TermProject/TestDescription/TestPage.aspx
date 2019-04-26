@@ -32,6 +32,8 @@
             </div>
             <hr />
             <div class="row">
+                <div runat="server" visible="false" id="jumbo" class="jumbotron bg-dark"><div class="row"><div class="col"><asp:Image runat="server" ID="img" style="width: 400px; height: 300px;" CssClass="float-left figure-img" /></div>
+                    <div class="col text-center"><asp:Label runat="server" ID="lblDept" CssClass="display-4 text-light"></asp:Label></div></div></div>
                 <div class="col-md-12">
                     <asp:GridView ID="gvProducts" runat="server" CssClass="table table-bordered table-hover" AutoGenerateColumns="False">
                         <Columns>

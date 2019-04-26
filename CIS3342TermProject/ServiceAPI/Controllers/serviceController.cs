@@ -25,7 +25,7 @@ namespace ServiceAPI.Controllers
             comm.CommandType = CommandType.StoredProcedure;
 
             DataSet ds;
-            List<string> dep = new List<string>(); ;
+            List<Department> dep = new List<Department>(); ;
 
             try
             {
@@ -36,7 +36,11 @@ namespace ServiceAPI.Controllers
 
                 for (int i = 0; i < rows.Count; i++)
                 {
-                    dep.Add((string)rows[i]["DepartmentName"]);
+                    Department d = new Department();
+                    d.DeptID = (string)rows[i]["DepartmentID"];
+                    d.DeptName = (string)rows[i]["DepartmentName"];
+                    d.DeptImage = (string)rows[i]["DepartmentImage"];            
+                    dep.Add(d);
                 }
             }
             catch (Exception ex)
@@ -48,8 +52,8 @@ namespace ServiceAPI.Controllers
         }
 
         // GET: api/service/5
-        [HttpGet("GetProducts/{deptID}")]
-        public List<Product> GetProducts(string deptID)
+        [HttpGet("GetProductCatalog/{deptID}")]
+        public List<Product> GetProductCatalog(string deptID)
         {
             SqlCommand comm = new SqlCommand();
             comm.CommandText = "TP_GetProductCatalog";
@@ -98,7 +102,7 @@ namespace ServiceAPI.Controllers
             comm.Parameters.AddWithValue("@SiteID", SiteID);
             comm.Parameters.AddWithValue("@APIKey", APIKey);
             comm.Parameters.AddWithValue("@Desc", Description);
-            comm.Parameters.AddWithValue("@Name", merchant.Address);
+            comm.Parameters.AddWithValue("@Name", merchant.Name);
             comm.Parameters.AddWithValue("@Address", merchant.Address);
             comm.Parameters.AddWithValue("@City", merchant.City);
             comm.Parameters.AddWithValue("@State", merchant.State);

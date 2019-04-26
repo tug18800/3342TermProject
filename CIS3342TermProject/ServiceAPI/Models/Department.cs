@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TermProjectClasses
+namespace ServiceAPI.Models
 {
     public class Department
     {
-        private int departID;
-        private string departName;
-        private string deprtImage;
+    
+        private string deptID;
+        private string deptName;
+        private string deptImage;
 
         public Department() { }
 
-        public int DepartID { get => departID; set => departID = value; }
-        public string DepartName { get => departName; set => departName = value; }
-        public string DeprtImage { get => deprtImage; set => deprtImage = value; }
+        public string DeptID { get => deptID; set => deptID = value; }
+        public string DeptName { get => deptName; set => deptName = value; }
+        public string DeptImage { get => deptImage; set => deptImage = value; }
     }
 }

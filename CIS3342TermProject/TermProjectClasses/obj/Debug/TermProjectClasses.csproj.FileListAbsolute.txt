@@ -10,3 +10,6 @@ C:\Users\Monkfish\Desktop\master\CIS3342TermProject\TermProjectClasses\obj\Debug
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\TermProjectClasses\obj\Debug\TermProjectClasses.csproj.CoreCompileInputs.cache
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\TermProjectClasses\obj\Debug\TermProjectClasses.dll
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\TermProjectClasses\obj\Debug\TermProjectClasses.pdb
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\TermProjectClasses\bin\Debug\Utilities.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\TermProjectClasses\bin\Debug\Utilities.pdb
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\TermProjectClasses\obj\Debug\TermProjectClasses.csproj.CopyComplete

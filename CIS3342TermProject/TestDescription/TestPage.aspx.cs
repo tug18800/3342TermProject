@@ -7,13 +7,14 @@ using System.Web.UI.WebControls;
 using System.Net;
 using System.Data;
 using System.Web.Script.Serialization;
-using TermProjectClass;
+using TermProjectClasses;
 
 namespace TestDescription
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
         string baseURI = "http://cis-iis2.temple.edu/Spring2019/CIS3342_tug18800/TermProjectWS/api/service/Merchants";
+        List<Department> dep;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -26,9 +27,12 @@ namespace TestDescription
         {
 
             string json = WebCom.GetJson(baseURI + "/GetDepartments");
-            var dep = new JavaScriptSerializer().Deserialize<List<string>>(json);
+            dep = new JavaScriptSerializer().Deserialize<List<Department>>(json);
 
+            ViewState["list"] = dep;
             ddlDepartments.DataSource = dep;
+            ddlDepartments.DataTextField = "DeptName";
+            ddlDepartments.DataValueField = "DeptID";
             ddlDepartments.DataBind();
 
             ddlDepartments.Items.Insert(0, new ListItem("-- Select --", ""));
@@ -39,6 +43,11 @@ namespace TestDescription
             if (ddlDepartments.SelectedValue != "")
             {
                 int id = ddlDepartments.SelectedIndex;
+                dep = (List<Department>)ViewState["list"];
+
+                img.ImageUrl = dep[id-1].DeptImage;
+                lblDept.Text = dep[id-1].DeptName;
+                jumbo.Visible = true;
 
                 //string apiUrl = baseURI + "/GetProducts?DeptID=" + id;
                 //WebClient client = new WebClient();
@@ -46,8 +55,10 @@ namespace TestDescription
                 //client.Encoding = Encoding.UTF8;
                 //string json = client.DownloadString(apiUrl);
 
-                string json = WebCom.GetJson(baseURI + "/GetProducts?DeptID=" + id.ToString());
+                string json = WebCom.GetJson(baseURI + "/GetProductCatalog/" + id.ToString());
                 List<Product> list = new JavaScriptSerializer().Deserialize<List<Product>>(json);
+
+                
 
                 gvProducts.DataSource = list;
                 gvProducts.DataBind();
@@ -61,7 +72,7 @@ namespace TestDescription
 
         protected void btnRegSubmit_Click(object sender, EventArgs e)
         {
-            string x = "?";
+            string x = "/";
 
             string SiteID = txtRegSiteID.Text;
             string APIKey = txtRegAPIKey.Text;
@@ -86,9 +97,9 @@ namespace TestDescription
 
 
 
-            x += "SiteID=" + SiteID + "&";
-            x += "APIKey=" + APIKey + "&";
-            x += "Description=" + Desc;
+            x += SiteID + "/";
+            x += "/" + APIKey + "/";
+            x += "/" + Desc;
 
 
             string y = WebCom.PushPOST(baseURI + "/RegisterSite" + x, seller);
@@ -98,7 +109,7 @@ namespace TestDescription
 
         protected void btnRecordSubmit_Click(object sender, EventArgs e)
         {
-            string x = "?";
+            string x = "/";
 
             string ProductID = txtRecProductID.Text;
             int Quantity = Convert.ToInt32(txtRecQuantity.Text);
@@ -125,10 +136,10 @@ namespace TestDescription
             cust.Email = Email;
 
 
-            x += "ProductID=" + ProductID + "&";
-            x += "Quantity=" + Quantity + "&";
-            x += "SiteID=" + SiteID + "&";
-            x += "APIKey=" + APIKey;
+            x += ProductID + "/";
+            x += "/" + Quantity + "/";
+            x += "/" + SiteID + "/";
+            x += "/" + APIKey;
 
 
             string y = WebCom.PushPOST(baseURI + "/RecordPurchase" + x, cust);

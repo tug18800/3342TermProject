@@ -31,6 +31,33 @@ namespace TestDescription {
         protected global::System.Web.UI.WebControls.DropDownList ddlDepartments;
         
         /// <summary>
+        /// jumbo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl jumbo;
+        
+        /// <summary>
+        /// img control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image img;
+        
+        /// <summary>
+        /// lblDept control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDept;
+        
+        /// <summary>
         /// gvProducts control.
         /// </summary>
         /// <remarks>

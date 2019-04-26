@@ -33,7 +33,7 @@
                         <div class="card h-100">
                             <h1 class="card-title text-center bg-success">GetDepartments</h1>
                             <div class="card-body">
-                                <p class="h4 d-inline">Route: </p><p class="h5 text-muted d-inline">api/service/Merchant/GetDepartments</p><br />
+                                <p class="h4 d-inline">Route: </p><br /><p class="h5 text-muted d-inline">api/service/Merchant/GetDepartments</p><br />
                                 <p class="h4 d-inline">Parameters: </p><p class="h5 text-muted d-inline">None</p><br />
                                 <p class="h4 d-inline">Return: </p><p class="h5 text-muted d-inline">List&lt;string&gt;</></p><br />
                                 <p class="h4 mt-2">Description: </p><p class="text-muted">This GET method is used to recieve a List&lt;string&gt; object containing all of the departments within our store. The set will be returned as null if there was a problem retrieving the set, so make sure to keep this in mind just in case.
@@ -46,7 +46,7 @@
                         <div class="card h-100">
                             <h1 class="card-title text-center bg-success">GetProducts</h1>
                             <div class="card-body">
-                                <p class="h4 d-inline">Route: </p><p class="h5 text-muted d-inline">api/service/Merchant/GetProducts</p><br />
+                                <p class="h4 d-inline">Route: </p><p class="h5 text-muted d-inline">api/service/Merchant/GetProductCatalog/{deptID}</p><br />
                                 <p class="h4 d-inline mt-2">Parameters: </p><p class="h5 text-muted d-inline">int ID</p><br />
                                 <p class="h4 d-inline">Return: </p><p class="h5 text-muted d-inline">List&lt;Product&gt;</></p><br />
 
@@ -68,8 +68,8 @@
                         <h1>Examples</h1>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item text-muted">...api/service/Merchant/GetDepartments</li>
-                            <li class="list-group-item text-muted">...api/service/Merchant/GetProducts?id=1</li>
-                            <li class="list-group-item text-muted">...api/service/Merchant/GetProducts?id=2</li>
+                            <li class="list-group-item text-muted">...api/service/Merchant/GetProductCatalog/1</li>
+                            <li class="list-group-item text-muted">...api/service/Merchant/GetProductCatalog/2</li>
                         </ul>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                         <div class="card h-100">
                             <h4 class="card-title text-center bg-warning">RegisterSite</h4>
                             <div class="card-body">
-                                <p class="h4 d-inline">Route: </p><p class="h5 text-muted d-inline">api/service/Merchant/GetDepartments</p><br />
+                                <p class="h4 d-inline">Route: </p><p class="h5 text-muted d-inline">api/service/Merchant/RegisterSite/{SiteID}/{Description}/{APIKey}</p><br />
                                 <p class="h4 d-inline">Parameters: </p><p class="h5 text-muted d-inline">string SiteID, string Description, string APIKey, string Email, Merchant merchant</p><br />
                                 <p class="h4 mt-2">Description: </p><p class="text-muted">When we use your platform to sell our prdocuts, we will use this method to register you into our database. We will store your site id, a description of who you are, a specialized API key for data transmittion secutiry, an email and also more information about you.</p>
                                 <p class="text-muted">We'll need the following information from you in the order that you see it below to fill our Merchant Object:</p>
@@ -96,10 +96,10 @@
                         </div>
                     </div>
                      <div class="col">
-                        <div class="card h-100">
+                        <div class="card h-100 mt-5">
                             <h4 class="card-title text-center bg-warning">RecordPurchase</h4>
                             <div class="card-body">
-                                <p class="h4 d-inline">Route: </p><p class="h5 text-muted d-inline">api/service/Merchant/GetDepartments</p><br />
+                                <p class="h4 d-inline">Route: </p><p class="h5 text-muted d-inline">api/service/Merchant/RecordPurchase/{ProductID}/{Quantity}/{SiteID}/{APIKey}</p><br />
                                 <p class="h4 d-inline">Parameters: </p><p class="h5 text-muted d-inline">string ProductID, int Quantity, string SiteID, string APIKey, Customer customer</p><br />
                                 <p class="h4 mt-2">Description: </p><p class="text-muted">After a customer from your site buys one of our products, you can send the transaction to this method. We will need the product's ID, the quantity of the product bought, your site ID, the API key we have within our records and the customer's information.</p>
                                 <p class="text-muted">We'll need the following customer information in the format that you see it below to fill our Customer Object:</p>
@@ -118,12 +118,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="row text-center mt-4">
+                <div class="row text-center mt-5">
                     <div class="col">
-                        <h1>Examples</h1>
+                        <h1 class="mt-3">Examples</h1>
                         <ul class="list-group list-group-flush text-muted">
-                            <li class="list-group-item text-md-center">...api/service/Merchant/RegisterSite?SiteID=AbC12&APIKey=xxx456&Desc=Amazon Site&Email=A.S@gmail.com&Phone=5555555555&Address=555 N 5 Stree&City=Philadelphia&State=PA&ZIP=19148</li>
-                            <li class="list-group-item"><a>...api/service/Merchant/RegisterSite?ProductID=75&Quantity=Amazon Site&SiteID=ABC123&APIKey=xxx456&CustomerID=5555555555&FirstName=555 N 5 Stree&LastName=Philadelphia&Age=PA&Phone=19148&Address=666 S 6th Street&City=New York&State=NY&Zip=15422</a></li>
+                            <li class="list-group-item text-md-center">...api/service/Merchant/RegisterSite/AbC12/xxx456/Amazon Site/</li>
+                            <li class="list-group-item"><a>...api/service/Merchant/RegisterSite/5/1/Amazon Site/ABC123/xxx456</a></li>
                         </ul>
                     </div>
                 </div>
