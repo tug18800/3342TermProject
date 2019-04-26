@@ -13,7 +13,12 @@ namespace CIS3342TermProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if(!IsPostBack && Request.Cookies["user"] != null)
+            {
+                HttpCookie ckieUser = Request.Cookies["user"];
+                txtUsername.Text = ckieUser.Values["Username"].ToString();
+                chkRemeber.Checked = true;
+            }
         }
 
         protected void btnSignUp_Click(object sender, EventArgs e)
@@ -29,9 +34,10 @@ namespace CIS3342TermProject
                     user.Username = username;
                     user.Password = txtNewPassword.Text;
                     user.Name = txtName.Text;
+                    user.Email = txtEmail.Text;
 
                     Session["user"] = user;
-                    Response.Redirect("SignUp.aspx");
+                    Response.Redirect("SignUp/SignUp.aspx");
                 }
                 else
                 {
@@ -47,12 +53,27 @@ namespace CIS3342TermProject
             string username = txtUsername.Text;
             string password = txtPassword.Text;
             string error;
+
+            bool remember = chkRemeber.Checked;
             if (IsValid)
             {
-               
-                User user = TermDB.GetUser(username, password, out error);
+                User user = TermDB.GetUser(username, password, out error); 
                 if (user != null & error == "")
                 {
+                    if (remember)
+                    {
+                        HttpCookie ckieUser = new HttpCookie("user");
+                        ckieUser.Values["Username"] = user.Username;
+                        ckieUser.Expires = DateTime.Now.AddDays(30);
+                        Response.Cookies.Add(ckieUser);
+                    }
+                    else
+                    {
+                        HttpCookie remove = Request.Cookies["user"];
+                        remove.Expires = DateTime.Now.AddDays(-10);
+                        remove.Value = null;
+                        Response.SetCookie(remove);
+                    }
                     Session["user"] = user;
                     Response.Redirect("Products.aspx");
                 }
@@ -66,7 +87,7 @@ namespace CIS3342TermProject
 
         protected void txtUsername_TextChanged(object sender, EventArgs e)
         {
-            if(lblLogInStatus.Visible)
+            if (lblLogInStatus.Visible)
             {
                 lblLogInStatus.Visible = !lblLogInStatus.Visible;
             }

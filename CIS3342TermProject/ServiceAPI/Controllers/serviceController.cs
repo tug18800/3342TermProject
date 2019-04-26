@@ -18,7 +18,7 @@ namespace ServiceAPI.Controllers
     {
         // GET: api/service
         [HttpGet("GetDepartments")]
-        public List<string> GetDepartments()
+        public List<Department> GetDepartments()
         {
             SqlCommand comm = new SqlCommand();
             comm.CommandText = "TP_GetDepartments";
@@ -48,13 +48,13 @@ namespace ServiceAPI.Controllers
         }
 
         // GET: api/service/5
-        [HttpGet("GetProducts")]
-        public List<Product> GetProducts(string DeptID)
+        [HttpGet("GetProducts/{deptID}")]
+        public List<Product> GetProducts(string deptID)
         {
             SqlCommand comm = new SqlCommand();
             comm.CommandText = "TP_GetProductCatalog";
             comm.CommandType = CommandType.StoredProcedure;
-            comm.Parameters.AddWithValue("@DepartmentID", DeptID);
+            comm.Parameters.AddWithValue("@DepartmentID", deptID);
             DataSet ds;
             List<Product> list = new List<Product>();
 
@@ -89,7 +89,7 @@ namespace ServiceAPI.Controllers
         }
 
         // POST: api/service
-        [HttpPost("RegisterSite")]
+        [HttpPost("RegisterSite/{SiteID}/{Description}/{APIKey}")]
         public bool RegisterSite(string SiteID, string Description, string APIKey, [FromBody]ContactInformation merchant)
         {
             SqlCommand comm = new SqlCommand();
@@ -125,7 +125,7 @@ namespace ServiceAPI.Controllers
         }
 
         // PUT: api/service/5
-        [HttpPost("RecordPurchase")]
+        [HttpPost("RecordPurchase/{ProductID}/{Quantity}/{SiteID}/{APIKey}")]
         public bool RecordPurchase(string ProductID, int Quantity, string SiteID, 
                                     string APIKey, [FromBody]Customer customer)
         {

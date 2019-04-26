@@ -193,6 +193,24 @@ namespace CIS3342TermProject {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator valName;
         
         /// <summary>
+        /// txtEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        
+        /// <summary>
+        /// rfEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfEmail;
+        
+        /// <summary>
         /// btnSignUp control.
         /// </summary>
         /// <remarks>

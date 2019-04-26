@@ -32,7 +32,7 @@
                         <div class="col-sm-5">
                         	
                         	<div class="form-box">
-                                <asp:Label runat="server" ID="lblLogInStatus" Visible="false" CssClass="text-center text-danger lead"></asp:Label>
+                                <asp:Label runat="server" ID="lblLogInStatus" Visible="false" CssClass="text-center text-danger lead"></asp:Label>                               
                                 <asp:ValidationSummary runat="server" ID="valsumLogIn" CssClass="lead text-danger text-center" DisplayMode="List" ValidationGroup="vgLogIn"
                                     HeaderText="Please fill in the following correctly:" />
 	                        	<div class="form-top">
@@ -61,7 +61,8 @@
                                         <div class="ml-4"> 
                                             <asp:CheckBox runat="server" type="checkbox" class="form-check-input" ID="chkRemeber" />
                                             <label class="form-check-label" for="chkRemember">Remember me</label>
-                                            <asp:Button runat="server" ID="btnLogIn" CssClass="btn btn-primary float-right" Text="Sign in!" OnClick="btnLogIn_Click"></asp:Button>
+                                            <asp:Button runat="server" ID="btnLogIn" CssClass="btn btn-primary float-right" 
+                                                CausesValidation="true" ValidationGroup="vgLogIn"  Text="Sign in!" OnClick="btnLogIn_Click"></asp:Button>
                                         </div>
 				                       
 				                    </div>
@@ -117,8 +118,15 @@
                                             <asp:RequiredFieldValidator ID="valName" runat="server" ControlToValidate="txtName" CssClass="text-danger" Display="Dynamic"
                                                 ErrorMessage="Name" ValidationGroup="vgNew">You must enter a name</asp:RequiredFieldValidator>
 				                        </div>
+                                        <div class="form-group">
+				                        	<label class="sr-only" for="form-about-yourself">Name</label>
+				                        	<asp:Textbox runat="server" type="text" placeholder="Email..." class="form-first-name form-control" id="txtEmail" ValidateRequestMode="Enabled"/>
+                                            <asp:RequiredFieldValidator ID="rfEmail" runat="server" ControlToValidate="txtEmail" CssClass="text-danger" Display="Dynamic"
+                                                ErrorMessage="Email" ValidationGroup="vgNew">You must enter an email</asp:RequiredFieldValidator>
+				                        </div>
 				                        <div>
-                                        <asp:Button runat="server" role="button" class="btn btn-primary float-right" CommandName="NewUser" Text="Sign me up!" ID="btnSignUp" OnClick="btnSignUp_Click"></asp:Button>
+                                        <asp:Button runat="server" role="button" class="btn btn-primary float-right" CommandName="NewUser" 
+                                            CausesValidation="true" ValidationGroup="vgNew"  Text="Sign me up!" ID="btnSignUp" OnClick="btnSignUp_Click"></asp:Button>
 				                        </div>
 				                    </div>
 			                    </div>
