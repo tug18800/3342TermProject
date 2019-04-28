@@ -44,21 +44,21 @@
         <div class="row">
             <div class="col-md-3 offset-2">
                 <div class="pro-img-details">
-                    <img src="https://www.kitchensanctuary.com/wp-content/uploads/2017/08/Crispy-Chicken-Burger-with-Honey-Mustard-Coleslaw-recipe-square-FS.jpg" alt="" />
+                    <asp:Image runat="server" ID="imgProductImage" CssClass="img-thumbnail" />
                 </div>
             </div>
             <div class="col-md-4">
-                <h4 class="pro-d-title">Food Item
-                </h4>
-                <p>
+                <asp:Label ID="lblName" runat="server" class="pro-d-title">Food Item</asp:Label>
+                <asp:Label ID="lblDesc" runat="server" CssClass="text-muted">
                     Praesent ac condimentum felis. Nulla at nisl orci, at dignissim dolor, The best product descriptions address your ideal buyer directly and personally. The best product descriptions address your ideal buyer directly and personally.
-                </p>
-                <div class="m-bot15"><strong>Price : </strong><span class="amount-old">$50</span>  <span class="pro-price">$30.00</span></div>
+                </asp:Label>
+                <div class="m-bot15"><strong>Price : </strong><asp:Label ID="lblPrice" runat="server" CssClass="text-muted"></asp:Label></div>
                 <div class="form-group">
-                    <input type="number" placeholder="Quantity" class="form-control" style="width:30%" />
+                    <asp:Textbox runat="server" type="number" ID="txtQuantity" placeholder="Quantity" class="form-control" style="width:30%"/>
+                    <asp:RequiredFieldValidator ID="rfQuantity" runat="server" CssClass="text-danger" SetFocusOnError="true" ControlToValidate="txtQuantity">You must enter a quantity</asp:RequiredFieldValidator>
                 </div>
 
-                <button class="btn btn-round btn-danger pull-left" type="button"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                <div class="btn btn-round btn-danger pull-left"><asp:Button  type="button" runat="server" ID="btnAdd" Text="Add to Cart"></asp:Button><i class="fa fa-shopping-cart"></i></div>
             </div>
         </div>
     </form>

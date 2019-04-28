@@ -97,6 +97,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AccountInfoChange.aspx" />
+    <Content Include="AccountOrderInfo.aspx" />
+    <Content Include="AccountPage.aspx" />
     <Content Include="Cart.aspx" />
     <Content Include="css\form-elements.css" />
     <Content Include="css\style.css" />
@@ -119,6 +122,8 @@
     <Content Include="scripts\jquery-3.3.1.slim.js" />
     <Content Include="scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="SignUp\SignUp.aspx" />
+    <Content Include="UCAccountInfo.ascx" />
+    <Content Include="UCAccountInfoChange.ascx" />
     <Content Include="Welcome.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -139,6 +144,27 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountInfoChange.aspx.cs">
+      <DependentUpon>AccountInfoChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountInfoChange.aspx.designer.cs">
+      <DependentUpon>AccountInfoChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccountOrderInfo.aspx.cs">
+      <DependentUpon>AccountOrderInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountOrderInfo.aspx.designer.cs">
+      <DependentUpon>AccountOrderInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AccountPage.aspx.cs">
+      <DependentUpon>AccountPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountPage.aspx.designer.cs">
+      <DependentUpon>AccountPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -181,6 +207,20 @@
     </Compile>
     <Compile Include="SignUp\SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UCAccountInfo.ascx.cs">
+      <DependentUpon>UCAccountInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UCAccountInfo.ascx.designer.cs">
+      <DependentUpon>UCAccountInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UCAccountInfoChange.ascx.cs">
+      <DependentUpon>UCAccountInfoChange.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UCAccountInfoChange.ascx.designer.cs">
+      <DependentUpon>UCAccountInfoChange.ascx</DependentUpon>
     </Compile>
     <Compile Include="Welcome.aspx.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>

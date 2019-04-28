@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace TermProjectClasses
         private string apiUrl;
         private string siteID;
         private string description;
-        private List<Object> departments;
+        private List<Department> departments;
         private List<Product> products;
 
 
@@ -30,7 +31,7 @@ namespace TermProjectClasses
         public string ApiUrl { get => apiUrl; set => apiUrl = value; }
         public string SiteID { get => siteID; set => siteID = value; }
         public string Description { get => description; set => description = value; }
-        public List<object> Departments { get => departments; set => departments = value; }
+        public List<Department> Departments { get => departments; set => departments = value; }
         public List<Product> Products { get => products; set => products = value; }
         public string GetRandomKey()
         {

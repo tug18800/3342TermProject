@@ -112,3 +112,12 @@ C:\Users\tug18800\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Micro
 C:\Users\tug18800\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\tug18800\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\tug18800\Desktop\master\CIS3342TermProject\CIS3342TermProject\obj\Debug\CIS3342TermProject.csproj.CopyComplete
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\TermProjectClasses.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Utilities.dll
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\TermProjectClasses.pdb
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Utilities.pdb
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\System.Diagnostics.DiagnosticSource.xml

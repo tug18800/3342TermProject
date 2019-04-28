@@ -45,8 +45,8 @@ namespace TestDescription
                 int id = ddlDepartments.SelectedIndex;
                 dep = (List<Department>)ViewState["list"];
 
-                img.ImageUrl = dep[id-1].departmentImage;
-                lblDept.Text = dep[id-1].departmentName;
+                img.ImageUrl = dep[id-1].DeptImage;
+                lblDept.Text = dep[id-1].DeptName;
                 jumbo.Visible = true;
 
                 //string apiUrl = baseURI + "/GetProducts?DeptID=" + id;

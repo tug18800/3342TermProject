@@ -10,7 +10,7 @@ namespace Utilities
 {
     public class DBConnect
     {
-        //Home
+        ////Home
         //String SqlConnectString = "server=127.0.0.1,22;Database=sp19_3342_tug18800;User id=tug18800;Password=Ceiyu3ci";
         ////ServerName:127.0.0.1,22
         //School

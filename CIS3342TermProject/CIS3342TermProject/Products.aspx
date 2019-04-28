@@ -16,6 +16,9 @@
     <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
+    <asp:Label runat="server" ID="lblAccessDenied" CssClass="text-center text-danger display-4" Visible="false"></asp:Label><br />
+    <asp:Label runat="server" ID="lblDeniedPrompt" CssClass="text-center text-danger lead mt-3" Visible="false"></asp:Label><br />
+    <a href="Welcome.aspx" role="button" id="btnLogin" runat="server" visible="false" class="btn btn-primary mt-4 text-center">To Login</a>
     <form id="form1" runat="server">
         <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">LOGO</a>
@@ -39,107 +42,52 @@
                 </ul>
             </div>
         </nav>
-        <div style="margin-top:8%;"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#">
-                                <img class="pic-1" src="https://www.kitchensanctuary.com/wp-content/uploads/2017/08/Crispy-Chicken-Burger-with-Honey-Mustard-Coleslaw-recipe-square-FS.jpg" />
-                            </a>
-                            <ul class="social">
-                                <li><a href="ProductDetail.aspx" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                                <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                            <span class="product-new-label">Sale</span>
-                            <span class="product-discount-label">20%</span>
+       <div class="container">
+           <div class="container w-75">
+               <div class="jumbotron">
+                    <asp:Label runat="server" CssClass="display-4 ml-auto mr-auto" ID="lblWelcome"></asp:Label>
+                </div>
+                </div>
+           <asp:Repeater ID="rptDepartments_0" runat="server" OnItemCommand="rptDepartments_0_ItemCommand" >
+                <ItemTemplate>
+                    <div class="row border-top border-bottom pointer bg-dark" >
+                        <div class="col-6">
+                                <asp:Image runat="server" ID="imgDepartmentImg" CssClass="rptImg py-5"  ImageUrl='<%# DataBinder.Eval(Container.DataItem, "deptImage") %>'/>
                         </div>
-                        <ul class="rating">
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star disable"></li>
-                        </ul>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Chicken Burger</a></h3>
-                            <div class="price">
-                                $16.00
-                               
-                                <span>$20.00</span>
-                            </div>
-                            <a class="add-to-cart" href="">+ Add To Cart</a>
+                        <div class="col align-self-center">
+                            <asp:Label runat="server" CssClass="display-4" Text='<%# DataBinder.Eval(Container.DataItem, "deptName") %>'></asp:Label>
+                        </div>
+                        <div class="col align-self-center">
+                            <asp:Button ID="btnProducts" CssClass="btn btn-dark" Text="Get Products!" runat="server" CommandName="getProduct"/>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#">
-                                <img class="pic-1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYu3gJ55J7iXOnsQL4r5fBeu7tfD8JQwXAe1TFg_8oWKi-ahokhQ" />
-                            </a>
-                            <ul class="social">
-                                <li><a href="ProductDetail.aspx" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                                <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                            <span class="product-new-label">Sale</span>
-                            <span class="product-discount-label">50%</span>
+                </ItemTemplate>
+            </asp:Repeater>
+
+           <asp:Repeater ID="rptProducts" runat="server" OnItemCommand="rptProducts_ItemCommand" Visible="false">
+                <ItemTemplate>
+                    <div class="row border-top border-bottom pointer bg-dark" >
+                        <div class="col-6">
+                                <asp:Image runat="server" ID="imgDepartmentImg" CssClass="rptImg py-5"  ImageUrl='<%# DataBinder.Eval(Container.DataItem, "ImageUrl") %>'/>
                         </div>
-                        <ul class="rating">
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                        </ul>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Big Vagetable Pizza</a></h3>
-                            <div class="price">
-                                $5.00
-                       
-                                <span>$10.00</span>
-                            </div>
-                            <a class="add-to-cart" href="">+ Add To Cart</a>
+                        <div class="col align-self-center">
+                            <asp:Label runat="server" CssClass="display-4" Text='<%# DataBinder.Eval(Container.DataItem, "Title") %>'></asp:Label>
+                        </div>
+                        <div class="col align-self-center">
+                            <asp:Label runat="server" CssClass="display-4" Text='<%# DataBinder.Eval(Container.DataItem, "Price", "{0:C}") %>'></asp:Label>
+                        </div>
+                        <div class="col align-self-center">
+                            <asp:Button ID="btnProducts" CssClass="btn btn-dark" Text="Get Products!" runat="server" CommandName="getProductDetail"/>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="product-grid">
-                        <div class="product-image">
-                            <a href="#">
-                                <img class="pic-1" src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Cheeseburger-n-Fries-Casserole_EXPS_13X9BZ19_7899_E10_05_6b.jpg" />
-                            </a>
-                            <ul class="social">
-                                <li><a href="ProductDetail.aspx" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                                <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                            <span class="product-new-label">Sale</span>
-                            <span class="product-discount-label">50%</span>
-                        </div>
-                        <ul class="rating">
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                            <li class="fa fa-star"></li>
-                        </ul>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Big Curly Fries</a></h3>
-                            <div class="price">
-                                $5.00
-                       
-                                <span>$10.00</span>
-                            </div>
-                            <a class="add-to-cart" href="">+ Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                </ItemTemplate>
+            </asp:Repeater>
+           <div class="row my-5">
+               <div class="col">
+                   <asp:Button runat="server" CssClass="btn btn-dark float-left" Text="Back" ID="btnBack" OnClick="btnBack_Click"/>
+               </div>
+           </div>
+       </div>
     </form>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

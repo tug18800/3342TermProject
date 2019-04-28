@@ -21,13 +21,22 @@ namespace CIS3342TermProject.Registration
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            Merchant merchant = LoadMerchant();
-
+            string merchantID = txtUsername.Text;
             string error;
-            if (TermDB.SaveMerchant(merchant, out error) & error == "")
+            if (TermDB.IsUniqueMerchant(merchantID, out error))
             {
-                Session["merchant"] = merchant;
-                Response.Redirect("Product.aspx");
+                Merchant merchant = LoadMerchant();
+
+                if (TermDB.SaveMerchant(merchant, out error) & error == "")
+                {
+                    Session["merchant"] = merchant;
+                    Response.Redirect("../Products.aspx");
+                }
+                else
+                {
+                    lblUserStatus.Text = error;
+                    lblUserStatus.Visible = true;
+                }
             }
             else
             {

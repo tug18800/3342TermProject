@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Web.Script.Serialization;
 using Utilities;
 namespace TermProjectClasses
 {
@@ -39,8 +39,37 @@ namespace TermProjectClasses
                 error = "An error occured while connecting to the database. || Error: " + ex.GetBaseException();
                 return false;
             }
+        }
 
 
+        public static bool IsUniqueMerchant(string merchantID, out string error)
+        {
+            DBConnect db = new DBConnect();
+            SqlCommand comm = new SqlCommand();
+
+            comm.CommandType = System.Data.CommandType.StoredProcedure;
+            comm.CommandText = "TP_GetMerchant";
+            comm.Parameters.AddWithValue("@merchantID", merchantID);
+
+            try
+            {
+                int n = 0;
+                db.GetDataSetUsingCmdObj(comm, out n);
+
+                if (n > 0)
+                {
+                    error = "This username already exists!";
+                    return false;
+                }
+
+                error = "";
+                return true;
+            }
+            catch (Exception ex)
+            {
+                error = "An error occured while connecting to the database. || Error: " + ex.GetBaseException();
+                return false;
+            }
         }
 
         public static User GetUser(string username, string password, out string error)
@@ -234,7 +263,10 @@ namespace TermProjectClasses
             contact.Email = merchant.Email;
             contact.Phone = merchant.Phone;
 
-            string url = "http://cis-iis2.temple.edu/Spring2019/CIS3342_tug18800/TermProjectWS/api/service/Merchants" + "/RegisterSite/" + merchant.SiteID + "/" + merchant.Description + "/" + merchant.APIKey;
+            if (!merchant.ApiUrl.EndsWith("/"))
+                merchant.ApiUrl += "/";
+
+            string url = merchant.ApiUrl + "RegisterSite/" + merchant.SiteID + "/" + merchant.Description + "/" + merchant.APIKey;
             string result = WebCom.PushPOST(url, contact);
 
             if (result == "false" || result == "An error has occured retrieving data from the Web API.")
@@ -283,6 +315,86 @@ namespace TermProjectClasses
             {
                 error = "An error has occured || Error: " + ex.ToString();
                 return false;
+            }
+        }
+
+        public static List<Merchant> GetMerchants()
+        {
+            List<Merchant> list = new List<Merchant>();
+
+            DBConnect db = new DBConnect();
+            SqlCommand comm = new SqlCommand();
+
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandText = "TP_GetMerchantList";
+
+            try
+            {
+                int n = 0;
+                DataSet ds = db.GetDataSetUsingCmdObj(comm, out n);
+
+                if (n < 0)
+                {
+                    return null;
+                }
+
+                DataRowCollection rows = ds.Tables[0].Rows;
+
+                for (int i = 0; i < rows.Count; i++)
+                {
+                    Merchant m = new Merchant();
+
+                    m.Username = (string)rows[i]["MerchantID"];
+                    m.SiteID = (string)rows[i]["SiteID"];
+                    m.APIKey = (string)rows[i]["APIKey"];
+                    m.ApiUrl = (string)rows[i]["APIUrl"];
+
+                    list.Add(m);
+                }
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+
+        public static List<Department> GetDepartment(string apiUrl)
+        {
+            try
+            {
+                string json = WebCom.GetJson(apiUrl + "/GetDepartments");
+                List<Department> dep = new JavaScriptSerializer().Deserialize<List<Department>>(json);
+
+                if (dep != null)
+                    return dep;
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
+
+        public static List<Product> GetProductCatalogue(string apiUrl, string deptNum)
+        {
+            try
+            {
+                string json = WebCom.GetJson(apiUrl + "/GetProductCatalog/"+deptNum);
+                List<Product> dep = new JavaScriptSerializer().Deserialize<List<Product>>(json);
+
+                if (dep != null)
+                    return dep;
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                return null;
             }
         }
     }

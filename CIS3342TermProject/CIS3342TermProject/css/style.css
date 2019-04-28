@@ -669,3 +669,14 @@ footer {
 .shopping-cart {
     margin-top: 20px;
 }
+
+.rptImg {
+    height: 350px;
+    width: 400px;
+    border-color: #5c6166;
+}
+
+.pointer
+{
+    cursor: pointer;
+}
