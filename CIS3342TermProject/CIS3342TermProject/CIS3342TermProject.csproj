@@ -100,10 +100,11 @@
     <Content Include="AccountInfoChange.aspx" />
     <Content Include="AccountOrderInfo.aspx" />
     <Content Include="AccountPage.aspx" />
-    <Content Include="Cart.aspx" />
+    <Content Include="Products\Cart.aspx" />
     <Content Include="css\form-elements.css" />
     <Content Include="css\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
     <Content Include="img\bg.jpg" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.min.js" />
@@ -112,8 +113,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="ProductDetail.aspx" />
-    <Content Include="Products.aspx" />
+    <Content Include="Products\ProductDetail.aspx" />
+    <Content Include="Products\Products.aspx" />
     <None Include="scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Registration\Registration.aspx" />
     <Content Include="SignUp\Questions.aspx" />
@@ -165,25 +166,28 @@
     <Compile Include="AccountPage.aspx.designer.cs">
       <DependentUpon>AccountPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Cart.aspx.cs">
+    <Compile Include="Products\Cart.aspx.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Cart.aspx.designer.cs">
+    <Compile Include="Products\Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductDetail.aspx.cs">
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Products\ProductDetail.aspx.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProductDetail.aspx.designer.cs">
+    <Compile Include="Products\ProductDetail.aspx.designer.cs">
       <DependentUpon>ProductDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Products.aspx.cs">
+    <Compile Include="Products\Products.aspx.cs">
       <DependentUpon>Products.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Products.aspx.designer.cs">
+    <Compile Include="Products\Products.aspx.designer.cs">
       <DependentUpon>Products.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

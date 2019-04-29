@@ -75,7 +75,7 @@ namespace CIS3342TermProject
                         Response.SetCookie(remove);
                     }
                     Session["user"] = user;
-                    Response.Redirect("Products.aspx");
+                    Response.Redirect("Products/Products.aspx");
                 }
                 else
                 {

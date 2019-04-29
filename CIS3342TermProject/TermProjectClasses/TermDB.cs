@@ -115,7 +115,7 @@ namespace TermProjectClasses
             }
 
         }
-
+       
         public static DataSet GetFirstQuestionSet()
         {
             DBConnect db = new DBConnect();
@@ -397,6 +397,99 @@ namespace TermProjectClasses
                 return null;
             }
         }
+
+        public static bool RecordOrder(Order order, string username, out string error)
+        {
+            DBConnect db = new DBConnect();
+            SqlCommand comm = new SqlCommand();
+
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandText = "TP_RecordOrder";
+
+            comm.Parameters.AddWithValue("@totalPrice", order.GetTotalPrice());
+            comm.Parameters.AddWithValue("@loginId", username);
+
+            
+            try
+            {
+                int n = db.DoUpdateUsingCmdObj(comm);
+
+                if(n < 0)
+                {
+                    error = "An error occured connecting to the database.";
+                    return false;
+                }
+
+                
+
+                foreach(OrderLine item in order.Items)
+                {
+                    comm = new SqlCommand();
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.CommandText = "TP_RecordOrderLine";
+                    comm.Parameters.AddWithValue("@productID", item.Item.ProductID);
+                    comm.Parameters.AddWithValue("@quantity", item.Quantity);
+                    comm.Parameters.AddWithValue("@price",item.Item.Price);
+                    comm.Parameters.AddWithValue("@deptId", item.Item.DepartmentID);
+                    comm.Parameters.AddWithValue("@username", item.MerchantId);
+
+                    n = db.DoUpdateUsingCmdObj(comm);
+
+                    if (n < 0)
+                    {
+                        error = "An error occured connecting to the database.";
+                        return false;
+                    }
+
+                }
+
+                error = "";
+                return true;
+            }
+            catch(Exception ex)
+            {
+                error = "The oepration failed. || Error: " + ex.InnerException;
+                return false;
+            }
+
+        }
+
+        public static bool PostOrder(Order order, Merchant merchant, User user, out string error)
+        {
+            Customer cust = new Customer();
+
+            cust.CustomerID = user.Username;
+            cust.Name = user.Name;
+            cust.Address = user.Address;
+            cust.City = user.City;
+            cust.State = user.State;
+            cust.ZipCode = user.ZipCode;
+            cust.Phone = user.Phone;
+            cust.Email = user.Email;
+
+            foreach(OrderLine item in order.Items)
+            {
+                string x = "";
+                x += "/" + item.Item.ProductID;
+                x += "/" + item.Quantity + "/";
+                x += "/" + merchant.SiteID + "/";
+                x += "/" + merchant.APIKey;
+
+
+                string result = WebCom.PushPOST(merchant.ApiUrl + "RecordPurchase" + x, cust);
+
+                if(result == "false")
+                {
+                    error = "The operation was not successful.";
+                    return false;
+                }
+            }
+
+            error = "";
+            return true;
+        }
+
+
     }
 }
 
