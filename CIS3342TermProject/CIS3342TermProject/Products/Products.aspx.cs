@@ -18,23 +18,24 @@ namespace CIS3342TermProject
             if(!IsPostBack)
             {
 
-                //if(Session["user"] == null)
-                //{
-                //Global.RenderAccessDenied(form1, lblAccessDenied, lblDeniedPrompt, btnLogin);
-                //}
-                //else
-                //{
-                //}
-                if(Session["order"] != null)
+                if (Session["user"] == null)
                 {
-                    btnCart.CssClass = "text-danger";
+                    Global.RenderAccessDenied(form1, lblAccessDenied, lblDeniedPrompt, btnLogin);
                 }
+                else
+                {
+                    if (Session["order"] == null)
+                    {
+                        CheckCart();
+                    }
 
-                GetDepartments();
-                rptDepartments_0.DataSource = merchantList[0].Departments;
-                rptDepartments_0.DataBind();
+                    GetDepartments();
+                    rptDepartments_0.DataSource = merchantList[0].Departments;
+                    rptDepartments_0.DataBind();
 
-                Session["merchantList"] = merchantList;
+                    Session["merchantList"] = merchantList;
+                }
+               
             }
             
         }
@@ -97,6 +98,27 @@ namespace CIS3342TermProject
             Session["merchant"] = null;
 
             Response.Redirect("Products.aspx");
+        }
+
+        private void CheckCart()
+        {
+            user = (User)Session["user"];
+            if (TermDB.CheckCart(user.Username))
+            {
+                Session["order"] = (Order)TermDB.GetCart(user.Username);
+
+            }
+            if (Session["order"] != null)
+            {
+                btnCart.CssClass = "text-danger";
+            }
+        }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+
+            Response.Redirect("../Welcome.aspx");
         }
     }
 }

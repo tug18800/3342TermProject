@@ -16,42 +16,16 @@ namespace CIS3342TermProject
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //if(Session["user"] == null)
-            //{
-            //    form1.Visible = false;
-            //    lblAccessDenied.Text = "ACCESS DENIED";
-            //    lblDeniedPrompt.Text = "You are currently attempting to access a page without being logged in. Please return to the log in screen and sign in to an account.";
-            //    lblAccessDenied.Visible = true;
-            //    lblDeniedPrompt.Visible = true;
-            //    btnLogin.Visible = true;
-            //}
-            //else
-            //{
-            //}
-
-            if (Session["order"] != null)
+            if (Session["user"] == null)
             {
-                btnCart.CssClass = "text-danger";
-            }
-            product = (Product)Session["product"];
-
-            imgProductImage.ImageUrl = product.ImageUrl;
-            lblName.Text = product.Title;
-            lblDesc.Text = product.Description;
-
-            if (product.Quantity > 0)
-            {
-                lblQuantity.Text = product.Quantity.ToString();
+                Global.RenderAccessDenied(form1, lblAccessDenied, lblDeniedPrompt, btnLogin);
             }
             else
             {
-                lblQuantity.Text = "Sold out!";
-                lblQuantity.CssClass += "text-danger h3";
-                txtQuantity.Enabled = false;
-                btnAddToCart.Enabled = false;
-            }
+                RenderProduct();
 
-            lblPrice.Text = product.Price.ToString("C");
+                lblPrice.Text = product.Price.ToString("C");
+            }
            
         }
 
@@ -108,6 +82,31 @@ namespace CIS3342TermProject
                 lblUserStatus.Visible = true;
             }
 
+        }
+
+        private void RenderProduct()
+        {
+            if (Session["order"] != null)
+            {
+                btnCart.CssClass = "text-danger";
+            }
+            product = (Product)Session["product"];
+
+            imgProductImage.ImageUrl = product.ImageUrl;
+            lblName.Text = product.Title;
+            lblDesc.Text = product.Description;
+
+            if (product.Quantity > 0)
+            {
+                lblQuantity.Text = product.Quantity.ToString();
+            }
+            else
+            {
+                lblQuantity.Text = "Sold out!";
+                lblQuantity.CssClass += "text-danger h3";
+                txtQuantity.Enabled = false;
+                btnAddToCart.Enabled = false;
+            }
         }
     }
 }

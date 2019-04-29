@@ -18,7 +18,7 @@
 <body>
     <asp:Label runat="server" ID="lblAccessDenied" CssClass="text-center text-danger display-4" Visible="false"></asp:Label><br />
     <asp:Label runat="server" ID="lblDeniedPrompt" CssClass="text-center text-danger lead mt-3" Visible="false"></asp:Label><br />
-    <a href="Welcome.aspx" role="button" id="btnLogin" runat="server" visible="false" class="btn btn-primary mt-4 text-center">To Login</a>
+    <a href="../Welcome.aspx" role="button" id="btnLogin" runat="server" visible="false" class="btn btn-primary mt-4 text-center">To Login</a>
     <form id="form1" runat="server">
         <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="#">LOGO</a>
@@ -37,7 +37,7 @@
                         <asp:LinkButton ID="btnCart" runat="server" CssClass="nav-link" PostBackUrl="Cart.aspx" title="Cart"><i class="fa fa-cart-plus"></i><span class="ttip">Cart</span></asp:LinkButton>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Welcome.aspx"><i class="fa fa-key"></i>Logout</a>
+                        <asp:LinkButton runat="server" ID="btnLogOut" CssClass="nav-link" OnClick="btnLogOut_Click"><i class="fa fa-key"></i>Logout</asp:LinkButton>
                     </li>
                 </ul>
             </div>

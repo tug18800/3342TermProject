@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
@@ -41,7 +43,6 @@ namespace TermProjectClasses
             }
         }
 
-
         public static bool IsUniqueMerchant(string merchantID, out string error)
         {
             DBConnect db = new DBConnect();
@@ -71,6 +72,8 @@ namespace TermProjectClasses
                 return false;
             }
         }
+
+        
 
         public static User GetUser(string username, string password, out string error)
         {
@@ -489,6 +492,108 @@ namespace TermProjectClasses
             return true;
         }
 
+        public static bool SaveCart(byte[] cart, string username)
+        {
+            DBConnect db = new DBConnect();
+            SqlCommand comm = new SqlCommand();
+
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandText = "TP_SaveCart";
+
+            comm.Parameters.AddWithValue("@cart", cart);
+            comm.Parameters.AddWithValue("@username", username);
+
+            try
+            {
+                int n = db.DoUpdateUsingCmdObj(comm);
+                
+                if( n < 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+
+        }
+
+        public static bool CheckCart(string username)
+        {
+            DBConnect db = new DBConnect();
+            SqlCommand comm = new SqlCommand();
+
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandText = "TP_CheckCart";
+
+            comm.Parameters.AddWithValue("@username", username);
+
+            try
+            {
+                int n;
+                db.GetDataSetUsingCmdObj(comm, out n);
+
+
+
+                if (n < 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+        }
+
+        public static Order GetCart(string username)
+        {
+
+            DBConnect db = new DBConnect();
+            SqlCommand comm = new SqlCommand();
+
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandText = "TP_GetCart";
+
+            comm.Parameters.AddWithValue("@username", username);
+
+            try
+            {
+                int n;
+                DataSet ds = db.GetDataSetUsingCmdObj(comm, out n);
+
+
+
+                if (n < 0)
+                {
+                    return null;
+                }
+
+                byte[] cart = (byte[])ds.Tables[0].Rows[0]["CartData"];
+                BinaryFormatter deser = new BinaryFormatter();
+                MemoryStream stream = new MemoryStream(cart);
+
+                Order order = (Order)deser.Deserialize(stream);
+
+                return order;
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
 
     }
 }

@@ -17,30 +17,30 @@ namespace CIS3342TermProject
         {
             if (!IsPostBack)
             {
-                //if(Session["user"] == null)
-                //{
-                //Global.RenderAccessDenied(form1, lblAccessDenied, lblDeniedPrompt, btnLogin);
-                //}
-                //else
-                //{
-                //}
-
-                if (Session["order"] != null)
+                if (Session["user"] == null)
                 {
-
-                    order = (Order)Session["order"];
-                    rptCart.DataSource = order.Items;
-                    rptCart.DataBind();
-
-                    lblTotal.Text = order.GetTotalPrice().ToString("C");
+                    Global.RenderAccessDenied(form1, lblAccessDenied, lblDeniedPrompt, btnLogin);
                 }
                 else
                 {
-                    form1.Visible = false;
-                    lblUserStatus.Text = "Your cart is empty!";
-                    lblUserStatus.CssClass = "text-success";
-                    lblUserStatus.Visible = true;
+                    if (Session["order"] != null)
+                    {
+
+                        order = (Order)Session["order"];
+                        rptCart.DataSource = order.Items;
+                        rptCart.DataBind();
+
+                        lblTotal.Text = order.GetTotalPrice().ToString("C");
+                    }
+                    else
+                    {
+                        form1.Visible = false;
+                        lblUserStatus.Text = "Your cart is empty!";
+                        lblUserStatus.CssClass = "text-success";
+                        lblUserStatus.Visible = true;
+                    }
                 }
+              
             }
         }
 
@@ -80,8 +80,7 @@ namespace CIS3342TermProject
                     lblStatus.Text = "Your order has been sent!";
 
                     Session["status"] = lblStatus;
-
-                    ; Response.Redirect("Products.aspx");
+                    Response.Redirect("Products.aspx");
                 }
                 else
                 {

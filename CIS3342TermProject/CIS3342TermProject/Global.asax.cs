@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
+using TermProjectClasses;
 namespace CIS3342TermProject
 {
     public class Global : System.Web.HttpApplication
@@ -19,7 +22,7 @@ namespace CIS3342TermProject
 
         protected void Session_Start(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
@@ -39,7 +42,17 @@ namespace CIS3342TermProject
 
         protected void Session_End(object sender, EventArgs e)
         {
+            if(Session["order"] != null)
+            {
+                User user = (User)Session["user"];
+                BinaryFormatter ser = new BinaryFormatter();
+                MemoryStream stream = new MemoryStream();
 
+                ser.Serialize(stream, Session["order"]);
+                byte[] cart = stream.ToArray();
+
+                TermDB.SaveCart(cart, user.Username);
+            }
         }
 
         protected void Application_End(object sender, EventArgs e)
