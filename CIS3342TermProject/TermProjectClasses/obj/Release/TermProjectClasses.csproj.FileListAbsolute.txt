@@ -19,3 +19,6 @@ C:\Users\tug18800\Desktop\master\CIS3342TermProject\TermProjectClasses\obj\Relea
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\TermProjectClasses\bin\Release\Utilities.dll
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\TermProjectClasses\bin\Release\Utilities.pdb
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\TermProjectClasses\obj\Release\TermProjectClasses.csproj.CopyComplete
+C:\Users\tug18800\Desktop\master\CIS3342TermProject\TermProjectClasses\bin\Release\Utilities.dll
+C:\Users\tug18800\Desktop\master\CIS3342TermProject\TermProjectClasses\bin\Release\Utilities.pdb
+C:\Users\tug18800\Desktop\master\CIS3342TermProject\TermProjectClasses\obj\Release\TermProjectClasses.csproj.CopyComplete

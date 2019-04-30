@@ -115,6 +115,7 @@
     </Content>
     <Content Include="Products\ProductDetail.aspx" />
     <Content Include="Products\Products.aspx" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Registration\Registration.aspx" />
     <Content Include="SignUp\Questions.aspx" />

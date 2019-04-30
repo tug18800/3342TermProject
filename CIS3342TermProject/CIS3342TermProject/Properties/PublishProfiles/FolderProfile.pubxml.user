@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>X:\TermProject</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Account/AccountInfoChange.aspx">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="Account/AccountOrderInfo.aspx">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="Account/AccountPage.aspx">
+      <publishTime>04/29/2019 17:38:51</publishTime>
+    </File>
+    <File Include="ApplicationInsights.config">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="bin/AspNet.ScriptManager.jQuery.dll">
+      <publishTime>04/29/2019 17:36:22</publishTime>
+    </File>
+    <File Include="bin/CIS3342TermProject.dll">
+      <publishTime>04/29/2019 20:55:26</publishTime>
+    </File>
+    <File Include="bin/CIS3342TermProject.pdb">
+      <publishTime>04/29/2019 20:55:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>04/29/2019 17:36:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>04/29/2019 17:36:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>04/29/2019 17:36:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>04/29/2019 17:36:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>04/29/2019 17:36:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>04/29/2019 17:36:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>04/29/2019 17:36:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.TelemetryCorrelation.dll">
+      <publishTime>04/29/2019 17:36:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>04/29/2019 17:36:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>04/29/2019 17:36:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>04/29/2019 17:36:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>04/29/2019 17:36:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>04/29/2019 17:36:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>04/29/2019 17:36:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>04/29/2019 17:36:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>04/29/2019 17:36:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>04/29/2019 17:36:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>04/29/2019 17:36:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>04/29/2019 17:36:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>04/29/2019 17:36:23</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>04/29/2019 17:36:23</publishTime>
+    </File>
+    <File Include="bin/System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>04/29/2019 17:36:23</publishTime>
+    </File>
+    <File Include="bin/TermProjectClasses.dll">
+      <publishTime>04/29/2019 20:55:23</publishTime>
+    </File>
+    <File Include="bin/TermProjectClasses.pdb">
+      <publishTime>04/29/2019 20:55:23</publishTime>
+    </File>
+    <File Include="bin/Utilities.dll">
+      <publishTime>04/29/2019 20:55:22</publishTime>
+    </File>
+    <File Include="bin/Utilities.pdb">
+      <publishTime>04/29/2019 20:55:22</publishTime>
+    </File>
+    <File Include="css/form-elements.css">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="css/style.css">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="img/bg.jpg">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="js/bootstrap.min.js">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="js/jquery.min.js">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="js/url.js">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="Products/Cart.aspx">
+      <publishTime>04/29/2019 18:03:49</publishTime>
+    </File>
+    <File Include="Products/ProductDetail.aspx">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="Products/Products.aspx">
+      <publishTime>04/29/2019 20:18:11</publishTime>
+    </File>
+    <File Include="Registration/Registration.aspx">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.js">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="scripts/ai.0.22.9-build00167.min.js">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="scripts/jquery-3.3.1.js">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="scripts/jquery-3.3.1.min.js">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="scripts/jquery-3.3.1.min.map">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="scripts/jquery-3.3.1.slim.js">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="scripts/jquery-3.3.1.slim.min.js">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="scripts/jquery-3.3.1.slim.min.map">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="SignUp/Questions.aspx">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="SignUp/SignUp.aspx">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="UCAccountInfo.ascx">
+      <publishTime>04/29/2019 20:29:57</publishTime>
+    </File>
+    <File Include="UCAccountInfoChange.ascx">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/29/2019 20:55:26</publishTime>
+    </File>
+    <File Include="Welcome.aspx">
+      <publishTime>04/29/2019 17:36:20</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

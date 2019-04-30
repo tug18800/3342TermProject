@@ -120,3 +120,8 @@ C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Utili
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Utilities.pdb
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\TermProjectClasses.dll
 C:\Users\Monkfish\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\TermProjectClasses.pdb
+C:\Users\tug18800\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\tug18800\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\TermProjectClasses.dll
+C:\Users\tug18800\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Utilities.dll
+C:\Users\tug18800\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\TermProjectClasses.pdb
+C:\Users\tug18800\Desktop\master\CIS3342TermProject\CIS3342TermProject\bin\Utilities.pdb
