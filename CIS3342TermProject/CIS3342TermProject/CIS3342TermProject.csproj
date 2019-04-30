@@ -97,9 +97,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AccountInfoChange.aspx" />
-    <Content Include="AccountOrderInfo.aspx" />
-    <Content Include="AccountPage.aspx" />
+    <Content Include="Account\AccountInfoChange.aspx" />
+    <Content Include="Account\AccountOrderInfo.aspx" />
+    <Content Include="Account\AccountPage.aspx" />
     <Content Include="Products\Cart.aspx" />
     <Content Include="css\form-elements.css" />
     <Content Include="css\style.css" />
@@ -145,25 +145,25 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountInfoChange.aspx.cs">
+    <Compile Include="Account\AccountInfoChange.aspx.cs">
       <DependentUpon>AccountInfoChange.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AccountInfoChange.aspx.designer.cs">
+    <Compile Include="Account\AccountInfoChange.aspx.designer.cs">
       <DependentUpon>AccountInfoChange.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AccountOrderInfo.aspx.cs">
+    <Compile Include="Account\AccountOrderInfo.aspx.cs">
       <DependentUpon>AccountOrderInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AccountOrderInfo.aspx.designer.cs">
+    <Compile Include="Account\AccountOrderInfo.aspx.designer.cs">
       <DependentUpon>AccountOrderInfo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AccountPage.aspx.cs">
+    <Compile Include="Account\AccountPage.aspx.cs">
       <DependentUpon>AccountPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AccountPage.aspx.designer.cs">
+    <Compile Include="Account\AccountPage.aspx.designer.cs">
       <DependentUpon>AccountPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Products\Cart.aspx.cs">

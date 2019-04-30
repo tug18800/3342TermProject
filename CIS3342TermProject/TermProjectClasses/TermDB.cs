@@ -147,6 +147,52 @@ namespace TermProjectClasses
 
         }
 
+        public static bool SaveUserInfo(User user)
+        {
+            DBConnect DB = new DBConnect();
+            SqlCommand comm = new SqlCommand();
+
+            comm.CommandType = CommandType.StoredProcedure;
+            comm.CommandText = "TP_SaveUserInfo";
+
+            comm.Parameters.AddWithValue("@username", user.Username);
+            comm.Parameters.AddWithValue("@password", user.Password);
+            comm.Parameters.AddWithValue("@name", user.Name);
+            comm.Parameters.AddWithValue("@email", user.Email);
+            comm.Parameters.AddWithValue("@address", user.Address);
+            comm.Parameters.AddWithValue("@city", user.City);
+            comm.Parameters.AddWithValue("@state", user.State);
+            comm.Parameters.AddWithValue("@zipCode", user.ZipCode);
+            comm.Parameters.AddWithValue("@phone", user.Phone);
+            comm.Parameters.AddWithValue("@bAddress", user.Billing.Address);
+            comm.Parameters.AddWithValue("@bCity", user.Billing.City);
+            comm.Parameters.AddWithValue("@bState", user.Billing.State);
+            comm.Parameters.AddWithValue("@bZipCode", user.Billing.ZipCode);
+            comm.Parameters.AddWithValue("@bPhone", user.Billing.Phone);
+
+            
+            try
+            {
+
+                int n = DB.DoUpdateUsingCmdObj(comm);
+
+                if (n > 0)
+                {
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                return false;
+            }
+        }
+
         public static DataSet GetSecondQuestionSet()
         {
             DBConnect db = new DBConnect();
@@ -364,30 +410,91 @@ namespace TermProjectClasses
 
         }
 
-        public static List<Department> GetDepartment(string apiUrl)
+        public static bool GetDepartment(string apiUrl, out List<Department> result)
         {
             try
             {
+                result = new List<Department>();
                 string json = WebCom.GetJson(apiUrl + "/GetDepartments");
+                string[] j = json.Split('\"');
                 List<Department> dep = new JavaScriptSerializer().Deserialize<List<Department>>(json);
 
+                if(dep[0].DeptID == null)
+                {
+                    List<Dept> derp = new JavaScriptSerializer().Deserialize<List<Dept>>(json);
+                    foreach (Dept d in derp)
+                    {
+                        Department dept = new Department();
+                        dept.DeptID = d.DepartmentNumber;
+                        dept.DeptName = d.DepartmentName;
+                        dept.DeptImage = d.DepartmentImage;
+
+                        result.Add(dept);
+                    }
+
+                    return true;
+                }
                 if (dep != null)
-                    return dep;
+                {
+                    result = dep;
+                    return true;
+                }
                 else
-                    return null;
+                {
+                    result = null;
+                    return false;
+                }
             }
             catch (Exception ex)
             {
-                return null;
+                result = null;
+                return false;
             }
 
+        }
+
+        public static bool GetOther(string apiUrl, out List<Department> result)
+        {
+
+            try
+            {
+                string json = WebCom.GetJson(apiUrl + "/GetDepartments");
+
+                List<Dept> dep = new JavaScriptSerializer().Deserialize<List<Dept>>(json);
+
+                result = new List<Department>();
+                foreach (Dept d in dep)
+                {
+                    Department dept = new Department();
+                    dept.DeptID = d.DepartmentNumber;
+                    dept.DeptName = d.DepartmentName;
+                    dept.DeptImage = d.DepartmentImage;
+
+                    result.Add(dept);
+                }
+
+                if (dep != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    result = null;
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                result = null;
+                return false;
+            }
         }
 
         public static List<Product> GetProductCatalogue(string apiUrl, string deptNum)
         {
             try
             {
-                string json = WebCom.GetJson(apiUrl + "/GetProductCatalog/"+deptNum);
+                string json = WebCom.GetJson(apiUrl + "/GetProductCatalog/" + deptNum);
                 List<Product> dep = new JavaScriptSerializer().Deserialize<List<Product>>(json);
 
                 if (dep != null)
@@ -400,6 +507,7 @@ namespace TermProjectClasses
                 return null;
             }
         }
+
 
         public static bool RecordOrder(Order order, string username, out string error)
         {
@@ -540,7 +648,7 @@ namespace TermProjectClasses
 
 
 
-                if (n < 0)
+                if (n <= 0)
                 {
                     return false;
                 }
@@ -594,6 +702,8 @@ namespace TermProjectClasses
             }
 
         }
+
+        
 
     }
 }

@@ -60,6 +60,7 @@ namespace CIS3342TermProject
                 User user = TermDB.GetUser(username, password, out error); 
                 if (user != null & error == "")
                 {
+                    Session["user"] = user;
                     if (remember)
                     {
                         HttpCookie ckieUser = new HttpCookie("user");
@@ -69,12 +70,15 @@ namespace CIS3342TermProject
                     }
                     else
                     {
-                        HttpCookie remove = Request.Cookies["user"];
-                        remove.Expires = DateTime.Now.AddDays(-10);
-                        remove.Value = null;
-                        Response.SetCookie(remove);
+                        if (Request.Cookies["user"] != null)
+                        {
+                            HttpCookie remove = Request.Cookies["user"];
+                            remove.Expires = DateTime.Now.AddDays(-10);
+                            remove.Value = null;
+                            Response.SetCookie(remove);
+                        }
                     }
-                    Session["user"] = user;
+                    
                     Response.Redirect("Products/Products.aspx");
                 }
                 else

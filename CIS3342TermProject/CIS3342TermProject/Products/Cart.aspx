@@ -31,15 +31,15 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav animate side-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="Products.aspx" title="Cart"><i class="fa fa-home"></i><span class="ttip">Home</span></a>
+                        <a class="nav-link" href="#" title="Cart"><i class="fa fa-home"></i><span class="ttip">Home</span></a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-md-auto d-md-flex">
                     <li class="nav-item">
-                        <a class="nav-link" href="Cart.aspx" title="Cart"><i class="fa fa-cart-plus"></i><span class="ttip">Cart</span></a>
+                        <asp:LinkButton ID="btnCart" runat="server" CssClass="nav-link" PostBackUrl="Cart.aspx" title="Cart"><i class="fa fa-cart-plus"></i><span class="ttip">Cart</span></asp:LinkButton>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Welcome.aspx"><i class="fa fa-key"></i>Logout</a>
+                        <asp:LinkButton runat="server" ID="btnLogOut" CssClass="nav-link" OnClick="btnLogOut_Click"><i class="fa fa-key"></i>Logout</asp:LinkButton>
                     </li>
                 </ul>
             </div>
@@ -56,7 +56,7 @@
                 </div>
                 <div class="card-body">
                     <!-- PRODUCT -->
-                    <asp:Repeater ID="rptCart" runat="server">
+                    <asp:Repeater ID="rptCart" runat="server" OnItemCommand="rptCart_ItemCommand">
                         <ItemTemplate>
                             <div class="row">
                                 <div class="col-12 col-sm-12 col-md-2 text-center">
@@ -80,7 +80,7 @@
                                     </div>
                                 </div>
                                 <div class="col-2 col-sm-2 col-md-2 text-right">
-                                    <asp:LinkButton runat="server" CssClass="btn btn-outline-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></asp:LinkButton>
+                                    <asp:LinkButton runat="server" ID="btnDelete" CommandName="DeleteProduct" CssClass="btn btn-outline-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></asp:LinkButton>
                                 </div>
                             </div>
                         </div>

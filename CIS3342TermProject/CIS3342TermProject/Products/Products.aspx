@@ -34,6 +34,9 @@
                 </ul>
                 <ul class="navbar-nav ml-md-auto d-md-flex">
                     <li class="nav-item">
+                        <asp:LinkButton CssClass="nav-link" runat="server" PostBackUrl="../Account/AccountPage.aspx"><i class="fa fa-user"></i><span class="ttip">Account</span></asp:LinkButton>
+                    </li>
+                    <li class="nav-item">
                         <asp:LinkButton ID="btnCart" runat="server" CssClass="nav-link" PostBackUrl="Cart.aspx" title="Cart"><i class="fa fa-cart-plus"></i><span class="ttip">Cart</span></asp:LinkButton>
                     </li>
                     <li class="nav-item">
@@ -52,6 +55,7 @@
                 <ItemTemplate>
                     <div class="row border-top border-bottom pointer bg-dark" >
                         <div class="col-6">
+                            <asp:Label Visible="false" runat="server" ID="lblDept" Text='<%# DataBinder.Eval(Container.DataItem, "deptID") %>'></asp:Label>
                                 <asp:Image runat="server" ID="imgDepartmentImg" CssClass="rptImg py-5"  ImageUrl='<%# DataBinder.Eval(Container.DataItem, "deptImage") %>'/>
                         </div>
                         <div class="col align-self-center">

@@ -48,7 +48,8 @@ namespace CIS3342TermProject
                 BinaryFormatter ser = new BinaryFormatter();
                 MemoryStream stream = new MemoryStream();
 
-                ser.Serialize(stream, Session["order"]);
+                Order order = (Order)Session["order"];
+                ser.Serialize(stream, order);
                 byte[] cart = stream.ToArray();
 
                 TermDB.SaveCart(cart, user.Username);

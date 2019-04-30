@@ -12,6 +12,7 @@ namespace CIS3342TermProject
     {
         User user;
         List<Merchant> merchantList;
+        List<Department> deptList;
         Merchant merchant;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,7 +31,7 @@ namespace CIS3342TermProject
                     }
 
                     GetDepartments();
-                    rptDepartments_0.DataSource = merchantList[0].Departments;
+                    rptDepartments_0.DataSource = deptList;
                     rptDepartments_0.DataBind();
 
                     Session["merchantList"] = merchantList;
@@ -45,9 +46,21 @@ namespace CIS3342TermProject
             merchantList = TermDB.GetMerchants();
             if(merchantList != null)
             {
+                deptList = new List<Department>();   
                 foreach(Merchant m in merchantList)
                 {
-                    m.Departments = TermDB.GetDepartment(m.ApiUrl);
+                    List<Department> temp = new List<Department>();
+                    List<Department> dept = new List<Department>();
+                    if(TermDB.GetDepartment(m.ApiUrl, out dept) & dept != null)
+                    {
+                        foreach(Department d in dept)
+                        {
+                            deptList.Add(d);
+                            temp.Add(d);
+                        }
+                        m.Departments = temp;
+                    }
+                    
                 }
             }
         }
@@ -58,8 +71,20 @@ namespace CIS3342TermProject
             {
                 merchantList = (List<Merchant>)Session["merchantList"];
 
-                int index = Convert.ToInt32(e.Item.ClientID.Split('_')[1]);
-                int department = Convert.ToInt32(e.Item.Controls[0].ClientID.Split('_')[3]) + 1;
+                int index = Convert.ToInt32(e.Item.Controls[0].ClientID.Split('_')[3])+1;
+                int count = 0;
+                int i = 0;
+                foreach(Merchant m in merchantList)
+                {
+                    count += m.Departments.Count;
+                    if (index < count)
+                    {
+                        index = i;
+                        break;
+                    }
+                    i++;
+                }
+                int department = Convert.ToInt32(((Label)e.Item.FindControl("lblDept")).Text);
 
                 merchant = merchantList[index];
                 merchant.Products = TermDB.GetProductCatalogue(merchant.ApiUrl, department.ToString());

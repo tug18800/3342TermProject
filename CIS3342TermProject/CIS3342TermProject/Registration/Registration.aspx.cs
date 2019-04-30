@@ -30,7 +30,7 @@ namespace CIS3342TermProject.Registration
                 if (TermDB.SaveMerchant(merchant, out error) & error == "")
                 {
                     Session["merchant"] = merchant;
-                    Response.Redirect("../Products.aspx");
+                    Response.Redirect("../Account/AccountPage.aspx");
                 }
                 else
                 {

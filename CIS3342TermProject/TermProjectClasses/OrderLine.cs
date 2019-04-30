@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TermProjectClasses
 {
+    [Serializable]
     public class OrderLine
     {
         private int orderLineId;

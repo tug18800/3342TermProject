@@ -91,5 +91,35 @@ namespace CIS3342TermProject
             }
 
         }
+
+        protected void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+
+            Response.Redirect("../Welcome.aspx");
+        }
+
+        protected void rptCart_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "DeleteProduct")
+            {
+                order = (Order)Session["order"];
+
+                LinkButton b = (LinkButton)e.Item.FindControl("btnDelete");
+                string[] test = b.ClientID.Split('_');
+                int index = Convert.ToInt32(b.ClientID.Split('_')[2]);
+               
+
+                order.Items.RemoveAt(index);
+
+                rptCart.DataBind();
+
+                if(order.Items == null)
+                {
+                    Session["order"] = null;
+                }
+                
+            }
+        }
     }
 }
